@@ -1,4 +1,4 @@
-/*!
+/*!2016-08-15 *//*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -6755,3 +6755,40 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+@font-face {
+  font-family: 'NHL';
+  src: url("/Styles/Fonts/NHL.ttf") format("truetype"); }
+
+.navbar-inverse .navbar-brand {
+  color: #ccc;
+  font-family: NHL;
+  padding: 5px;
+  margin-right: 20px; }
+  .navbar-inverse .navbar-brand img {
+    width: 60px;
+    height: 60px; }
+  .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+    background-color: transparent;
+    color: #ccc; }
+  .navbar-inverse .navbar-brand p {
+    margin-top: -15px; }
+
+.navbar-inverse navbar-header p {
+  color: white !important;
+  font-family: NHL; }
+
+.navbar-nav {
+  padding-top: 6.5px; }
+
+.navbar-toggle {
+  margin-top: 22px; }
+
+.body-content {
+  margin-top: 81px; }
+
+@media (max-width: 767px) {
+  .navbar-brand {
+    margin-top: -5px; }
+  .navbar-toggle {
+    margin-bottom: 20px; } }

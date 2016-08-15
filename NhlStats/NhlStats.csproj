@@ -215,6 +215,7 @@
     <Content Include="Scripts\script-bundle.min.js" />
     <Content Include="Styles\Images\nhl-logo.png" />
     <Content Include="Styles\main.css" />
+    <Content Include="Styles\main.min.css" />
     <Content Include="Styles\styles-bundle.css" />
     <Content Include="Styles\styles-bundle.min.css" />
   </ItemGroup>

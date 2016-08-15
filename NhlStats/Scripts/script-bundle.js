@@ -1,9 +1,4 @@
-/**
- * @license AngularJS v1.5.8
- * (c) 2010-2016 Google, Inc. http://angularjs.org
- * License: MIT
- */
-(function(window) {'use strict';
+/*!2016-08-15 */(function(window) {'use strict';
 
 /**
  * @description
@@ -31766,11 +31761,6 @@ $provide.value("$locale", {
 })(window);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-/**
- * @license AngularJS v1.5.8
- * (c) 2010-2016 Google, Inc. http://angularjs.org
- * License: MIT
- */
 (function(window, angular) {'use strict';
 
 /* global shallowCopy: true */
@@ -44810,3 +44800,5 @@ if (typeof jQuery === 'undefined') {
   })
 
 }(jQuery);
+
+var nhlApp = angular.module('nhlApp', ['ngRoute']);
