@@ -1,6 +1,6 @@
 ﻿module.exports = function (grunt) {
 
-    var scriptsToBundle = ['node_modules/angular/angular.js', 'node_modules/angular-route/angular-route.js', 'node_modules/jquery/jquery.js', 'node_modules/bootstrap/dist/js/bootstrap.js', 'Scripts/app/app.js'];
+    var scriptsToBundle = ['node_modules/angular/angular.js', 'node_modules/angular-route/angular-route.js', 'node_modules/jquery/jquery.js', 'node_modules/bootstrap/dist/js/bootstrap.js', 'Scripts/app/**/*.js'];
     var stylesToBundle = ['node_modules/bootstrap/dist/css/bootstrap.css', 'Styles/main.css'];
 
     grunt.initConfig({
@@ -50,25 +50,26 @@
             }
         },
         watch: {
+            concatScripts: {
+                files: scriptsToBundle,
+                tasks: ['concat:scripts']
+            },
+            concatStyles: {
+                files: stylesToBundle,
+                tasks: ['concat:styles']
+            },
             sass: {
                 files: 'Styles/**/*.scss',
                 tasks: ['sass']
-            },
-            uglify: {
-                files: 'Scripts/**/*.js',
-                tasks: ['uglify']
             },
             cssmin: {
                 files: 'Styles/main.css',
                 tasks: ['cssmin']
             },
-            concatStyles: {
-                files: stylesToBundle,
-                tasks: ['concat']
-            },
-            concatScripts: {
-                files: scriptsToBundle,
-                tasks: ['concat']
+
+            uglify: {
+                files: 'Scripts/**/*.js',
+                tasks: ['uglify']
             }
         }
     });

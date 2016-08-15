@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhlStats", "NhlStats\NhlStats.csproj", "{E82644EA-AD24-4543-AE21-2DA041E99339}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhlStats.Web", "NhlStats\NhlStats.Web.csproj", "{E82644EA-AD24-4543-AE21-2DA041E99339}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhlStats.Api", "NhlStats.Api\NhlStats.Api.csproj", "{BB2567FA-AE22-4E6C-9811-36261E6716F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{E82644EA-AD24-4543-AE21-2DA041E99339}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E82644EA-AD24-4543-AE21-2DA041E99339}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E82644EA-AD24-4543-AE21-2DA041E99339}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB2567FA-AE22-4E6C-9811-36261E6716F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB2567FA-AE22-4E6C-9811-36261E6716F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB2567FA-AE22-4E6C-9811-36261E6716F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB2567FA-AE22-4E6C-9811-36261E6716F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

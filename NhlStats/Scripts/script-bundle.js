@@ -44801,4 +44801,44 @@ if (typeof jQuery === 'undefined') {
 
 }(jQuery);
 
-var nhlApp = angular.module('nhlApp', ['ngRoute']);
+var nhlApp = angular.module('nhlApp', ['ngRoute', 'nhlControllers', 'nhlServices']);
+
+var nhlControllers = angular.module('nhlControllers', []);
+var nhlServices = angular.module('nhlServices', []);
+nhlControllers.controller('matchController', ['apiClient', function (apiClient) {
+
+    $scope.getLatestMatches(function () {
+        apiClient.getAllMatches()
+            .then(function (response) {
+                return response;
+            })
+            .catch(function (error) {
+                return error;
+            });
+    });
+
+}]);
+nhlServices.service('apiClient', ['$http', function ($http) {
+    var baseUrl = 'http://nhlstats.api.local';
+
+    this.getAllMatches = function () {
+        return $http.get(baseUrl + '/matches/getall')
+			.then(function (response) { return response })
+			.catch(function (error) { return error });
+    };
+
+}]);
+nhlApp.config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'Views/Home.html'
+            }).
+          when('/add', {
+              templateUrl: 'Views/Match/Add.html'
+          }).
+          otherwise('/');
+
+        $locationProvider.html5Mode(true);
+    }
+]);

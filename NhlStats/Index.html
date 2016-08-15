@@ -4,14 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NHL Stats</title>
-    <link href="Styles/styles-bundle.css" rel="stylesheet"/>
+    <base href="/" />
+    <link href="Styles/styles-bundle.css" rel="stylesheet" />
 </head>
 <body ng-app="nhlApp">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <a href="/" class="navbar-brand">
-                    <img src="/Styles/Images/nhl-logo.png"/>
+                    <img src="/Styles/Images/nhl-logo.png" />
                     <p>STATS</p>
                 </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -23,21 +24,23 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="navbar-btn"><a href="#!/add">Add match</a></li>
+                    <li class="navbar-btn"><a href="/add">Add match</a></li>
+                    <li class="navbar-btn"><a href="/stats">Statistics</a></li>
+                    <li class="navbar-btn"><a href="/addPlayer">Add player</a></li>
                 </ul>
             </div>
         </div>
     </div>
-<div class="container body-content">
-    <div ng-view>
+    <div class="container body-content">
+        <div ng-view>
 
+        </div>
+
+        <hr />
+        <footer class="text-center navbar-fixed-bottom">
+            <p>&copy; 2016 - Ludvig Flemmich</p>
+        </footer>
     </div>
-
-    <hr/>
-    <footer class="text-center navbar-fixed-bottom">
-        <p>&copy; 2016 - Ludvig Flemmich</p>
-    </footer>
-</div>
     <script src="Scripts/script-bundle.js"></script>
 </body>
 </html>

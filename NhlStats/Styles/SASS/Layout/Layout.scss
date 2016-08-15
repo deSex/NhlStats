@@ -17,7 +17,7 @@
 
         &:hover, &:focus {
             background-color: transparent;
-            color: #ccc;
+            color: #ff7d00;
         }
 
         p {
@@ -25,10 +25,13 @@
         }
     }
 
-    navbar-header {
-        p {
-            color: white !important;
-            font-family: NHL;
+    .navbar-nav {
+        li {
+            a {
+                &:hover, &:focus {
+                    color: #ff7d00;
+                }
+            }
         }
     }
 }
@@ -42,7 +45,8 @@
 }
 
 .body-content {
-    margin-top: 81px;
+    margin-top: 150px;
+    padding-bottom: 50px;
 }
 
 @media(max-width: 767px) {

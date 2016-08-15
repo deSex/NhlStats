@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E82644EA-AD24-4543-AE21-2DA041E99339}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NhlStats</RootNamespace>
+    <AssemblyName>NhlStats</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Gruntfile.js" />
+    <Content Include="Index.html" />
+    <Content Include="node_modules\angular-route\angular-route.js" />
+    <Content Include="node_modules\angular-route\angular-route.min.js" />
+    <Content Include="node_modules\angular-route\index.js" />
+    <Content Include="node_modules\angular\angular-csp.css" />
+    <Content Include="node_modules\angular\angular.js" />
+    <Content Include="node_modules\angular\angular.min.js" />
+    <Content Include="node_modules\angular\index.js" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="node_modules\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="node_modules\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="node_modules\bootstrap\dist\js\npm.js" />
+    <Content Include="node_modules\bootstrap\Gruntfile.js" />
+    <Content Include="node_modules\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="node_modules\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="node_modules\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="node_modules\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="node_modules\bootstrap\grunt\change-version.js" />
+    <Content Include="node_modules\bootstrap\js\affix.js" />
+    <Content Include="node_modules\bootstrap\js\alert.js" />
+    <Content Include="node_modules\bootstrap\js\button.js" />
+    <Content Include="node_modules\bootstrap\js\carousel.js" />
+    <Content Include="node_modules\bootstrap\js\collapse.js" />
+    <Content Include="node_modules\bootstrap\js\dropdown.js" />
+    <Content Include="node_modules\bootstrap\js\modal.js" />
+    <Content Include="node_modules\bootstrap\js\popover.js" />
+    <Content Include="node_modules\bootstrap\js\scrollspy.js" />
+    <Content Include="node_modules\bootstrap\js\tab.js" />
+    <Content Include="node_modules\bootstrap\js\tooltip.js" />
+    <Content Include="node_modules\bootstrap\js\transition.js" />
+    <Content Include="node_modules\grunt-contrib-concat\tasks\concat.js" />
+    <Content Include="node_modules\grunt-contrib-concat\tasks\lib\comment.js" />
+    <Content Include="node_modules\grunt-contrib-concat\tasks\lib\sourcemap.js" />
+    <Content Include="node_modules\grunt-contrib-uglify\tasks\lib\uglify.js" />
+    <Content Include="node_modules\grunt-contrib-uglify\tasks\uglify.js" />
+    <Content Include="node_modules\grunt-contrib-watch\tasks\lib\livereload.js" />
+    <Content Include="node_modules\grunt-contrib-watch\tasks\lib\taskrun.js" />
+    <Content Include="node_modules\grunt-contrib-watch\tasks\lib\taskrunner.js" />
+    <Content Include="node_modules\grunt-contrib-watch\tasks\watch.js" />
+    <Content Include="node_modules\grunt-sass\tasks\sass.js" />
+    <Content Include="node_modules\grunt\lib\grunt.js" />
+    <Content Include="node_modules\grunt\lib\grunt\cli.js" />
+    <Content Include="node_modules\grunt\lib\grunt\config.js" />
+    <Content Include="node_modules\grunt\lib\grunt\event.js" />
+    <Content Include="node_modules\grunt\lib\grunt\fail.js" />
+    <Content Include="node_modules\grunt\lib\grunt\file.js" />
+    <Content Include="node_modules\grunt\lib\grunt\help.js" />
+    <Content Include="node_modules\grunt\lib\grunt\option.js" />
+    <Content Include="node_modules\grunt\lib\grunt\task.js" />
+    <Content Include="node_modules\grunt\lib\grunt\template.js" />
+    <Content Include="node_modules\grunt\lib\util\task.js" />
+    <Content Include="node_modules\grunt\node_modules\grunt-cli\lib\cli.js" />
+    <Content Include="node_modules\grunt\node_modules\grunt-cli\lib\completion.js" />
+    <Content Include="node_modules\grunt\node_modules\grunt-cli\lib\info.js" />
+    <Content Include="node_modules\jquery\.gitattributes" />
+    <Content Include="node_modules\jquery\.gitmodules" />
+    <Content Include="node_modules\jquery\AUTHORS.txt" />
+    <Content Include="node_modules\jquery\build\release-notes.js" />
+    <Content Include="node_modules\jquery\build\release.js" />
+    <Content Include="node_modules\jquery\Gruntfile.js" />
+    <Content Include="node_modules\jquery\jquery-migrate.js" />
+    <Content Include="node_modules\jquery\jquery-migrate.min.js" />
+    <Content Include="node_modules\jquery\jquery.js" />
+    <Content Include="node_modules\jquery\jquery.min.js" />
+    <Content Include="node_modules\jquery\MIT-LICENSE.txt" />
+    <Content Include="node_modules\jquery\speed\benchmark.js" />
+    <Content Include="node_modules\jquery\speed\benchmarker.css" />
+    <Content Include="node_modules\jquery\speed\benchmarker.js" />
+    <Content Include="node_modules\jquery\speed\closest.html" />
+    <Content Include="node_modules\jquery\speed\css.html" />
+    <Content Include="node_modules\jquery\speed\event.html" />
+    <Content Include="node_modules\jquery\speed\filter.html" />
+    <Content Include="node_modules\jquery\speed\find.html" />
+    <Content Include="node_modules\jquery\speed\index.html" />
+    <Content Include="node_modules\jquery\speed\jquery-basis.js" />
+    <Content Include="node_modules\jquery\speed\slice.vs.concat.html" />
+    <Content Include="node_modules\jquery\src\ajax.js" />
+    <Content Include="node_modules\jquery\src\ajax\jsonp.js" />
+    <Content Include="node_modules\jquery\src\ajax\script.js" />
+    <Content Include="node_modules\jquery\src\ajax\xhr.js" />
+    <Content Include="node_modules\jquery\src\attributes.js" />
+    <Content Include="node_modules\jquery\src\callbacks.js" />
+    <Content Include="node_modules\jquery\src\core.js" />
+    <Content Include="node_modules\jquery\src\css.js" />
+    <Content Include="node_modules\jquery\src\data.js" />
+    <Content Include="node_modules\jquery\src\deferred.js" />
+    <Content Include="node_modules\jquery\src\deprecated.js" />
+    <Content Include="node_modules\jquery\src\dimensions.js" />
+    <Content Include="node_modules\jquery\src\effects.js" />
+    <Content Include="node_modules\jquery\src\event-alias.js" />
+    <Content Include="node_modules\jquery\src\event.js" />
+    <Content Include="node_modules\jquery\src\exports.js" />
+    <Content Include="node_modules\jquery\src\intro.js" />
+    <Content Include="node_modules\jquery\src\manipulation.js" />
+    <Content Include="node_modules\jquery\src\offset.js" />
+    <Content Include="node_modules\jquery\src\outro.js" />
+    <Content Include="node_modules\jquery\src\queue.js" />
+    <Content Include="node_modules\jquery\src\serialize.js" />
+    <Content Include="node_modules\jquery\src\sizzle-jquery.js" />
+    <Content Include="node_modules\jquery\src\support.js" />
+    <Content Include="node_modules\jquery\src\traversing.js" />
+    <Content Include="node_modules\jquery\test\data\1x1.jpg" />
+    <Content Include="node_modules\jquery\test\data\ajax\unreleasedXHR.html" />
+    <Content Include="node_modules\jquery\test\data\badcall.js" />
+    <Content Include="node_modules\jquery\test\data\badjson.js" />
+    <Content Include="node_modules\jquery\test\data\cleanScript.html" />
+    <Content Include="node_modules\jquery\test\data\core\cc_on.html" />
+    <Content Include="node_modules\jquery\test\data\dashboard.xml" />
+    <Content Include="node_modules\jquery\test\data\dimensions\documentLarge.html" />
+    <Content Include="node_modules\jquery\test\data\dimensions\documentSmall.html" />
+    <Content Include="node_modules\jquery\test\data\event\promiseReady.html" />
+    <Content Include="node_modules\jquery\test\data\event\syncReady.html" />
+    <Content Include="node_modules\jquery\test\data\iframe.html" />
+    <Content Include="node_modules\jquery\test\data\jquery-1.8.2.ajax_xhr.min.js" />
+    <Content Include="node_modules\jquery\test\data\json_obj.js" />
+    <Content Include="node_modules\jquery\test\data\manipulation\iframe-denied.html" />
+    <Content Include="node_modules\jquery\test\data\name.html" />
+    <Content Include="node_modules\jquery\test\data\offset\absolute.html" />
+    <Content Include="node_modules\jquery\test\data\offset\body.html" />
+    <Content Include="node_modules\jquery\test\data\offset\fixed.html" />
+    <Content Include="node_modules\jquery\test\data\offset\relative.html" />
+    <Content Include="node_modules\jquery\test\data\offset\scroll.html" />
+    <Content Include="node_modules\jquery\test\data\offset\static.html" />
+    <Content Include="node_modules\jquery\test\data\offset\table.html" />
+    <Content Include="node_modules\jquery\test\data\readywaitasset.js" />
+    <Content Include="node_modules\jquery\test\data\readywaitloader.js" />
+    <Content Include="node_modules\jquery\test\data\selector\html5_selector.html" />
+    <Content Include="node_modules\jquery\test\data\selector\sizzle_cache.html" />
+    <Content Include="node_modules\jquery\test\data\support\bodyBackground.html" />
+    <Content Include="node_modules\jquery\test\data\support\shrinkWrapBlocks.html" />
+    <Content Include="node_modules\jquery\test\data\support\testElementCrash.html" />
+    <Content Include="node_modules\jquery\test\data\test.html" />
+    <Content Include="node_modules\jquery\test\data\test.js" />
+    <Content Include="node_modules\jquery\test\data\test2.html" />
+    <Content Include="node_modules\jquery\test\data\test3.html" />
+    <Content Include="node_modules\jquery\test\data\testinit.js" />
+    <Content Include="node_modules\jquery\test\data\testrunner.js" />
+    <Content Include="node_modules\jquery\test\data\testsuite.css" />
+    <Content Include="node_modules\jquery\test\data\ua.txt" />
+    <Content Include="node_modules\jquery\test\data\with_fries.xml" />
+    <Content Include="node_modules\jquery\test\delegatetest.html" />
+    <Content Include="node_modules\jquery\test\hovertest.html" />
+    <Content Include="node_modules\jquery\test\index.html" />
+    <Content Include="node_modules\jquery\test\localfile.html" />
+    <Content Include="node_modules\jquery\test\networkerror.html" />
+    <Content Include="node_modules\jquery\test\readywait.html" />
+    <Content Include="node_modules\jquery\test\unit\ajax.js" />
+    <Content Include="node_modules\jquery\test\unit\attributes.js" />
+    <Content Include="node_modules\jquery\test\unit\callbacks.js" />
+    <Content Include="node_modules\jquery\test\unit\core.js" />
+    <Content Include="node_modules\jquery\test\unit\css.js" />
+    <Content Include="node_modules\jquery\test\unit\data.js" />
+    <Content Include="node_modules\jquery\test\unit\deferred.js" />
+    <Content Include="node_modules\jquery\test\unit\deprecated.js" />
+    <Content Include="node_modules\jquery\test\unit\dimensions.js" />
+    <Content Include="node_modules\jquery\test\unit\effects.js" />
+    <Content Include="node_modules\jquery\test\unit\event.js" />
+    <Content Include="node_modules\jquery\test\unit\exports.js" />
+    <Content Include="node_modules\jquery\test\unit\manipulation.js" />
+    <Content Include="node_modules\jquery\test\unit\offset.js" />
+    <Content Include="node_modules\jquery\test\unit\queue.js" />
+    <Content Include="node_modules\jquery\test\unit\selector.js" />
+    <Content Include="node_modules\jquery\test\unit\serialize.js" />
+    <Content Include="node_modules\jquery\test\unit\support.js" />
+    <Content Include="node_modules\jquery\test\unit\traversing.js" />
+    <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\components\match\match-controller.js" />
+    <Content Include="Scripts\app\utils\api-client.js" />
+    <Content Include="Scripts\app\utils\route-config.js" />
+    <Content Include="Scripts\script-bundle.js" />
+    <Content Include="Scripts\script-bundle.min.js" />
+    <Content Include="Styles\Images\nhl-logo.png" />
+    <Content Include="Styles\main.css" />
+    <Content Include="Styles\main.min.css" />
+    <Content Include="Styles\styles-bundle.css" />
+    <Content Include="Styles\styles-bundle.min.css" />
+    <Content Include="Views\Home.html" />
+    <Content Include="Views\Match\Add.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="node_modules\angular-route\angular-route.min.js.map" />
+    <Content Include="node_modules\angular-route\bower.json" />
+    <Content Include="node_modules\angular-route\LICENSE.md" />
+    <Content Include="node_modules\angular-route\package.json" />
+    <Content Include="node_modules\angular-route\README.md" />
+    <Content Include="node_modules\bootstrap\CHANGELOG.md" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="node_modules\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="node_modules\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="node_modules\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="node_modules\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="node_modules\bootstrap\grunt\.jshintrc" />
+    <Content Include="node_modules\bootstrap\grunt\configBridge.json" />
+    <Content Include="node_modules\bootstrap\grunt\npm-shrinkwrap.json" />
+    <Content Include="node_modules\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="node_modules\bootstrap\less\alerts.less" />
+    <Content Include="node_modules\bootstrap\less\badges.less" />
+    <Content Include="node_modules\bootstrap\less\bootstrap.less" />
+    <Content Include="node_modules\bootstrap\less\breadcrumbs.less" />
+    <Content Include="node_modules\bootstrap\less\button-groups.less" />
+    <Content Include="node_modules\bootstrap\less\buttons.less" />
+    <Content Include="node_modules\bootstrap\less\carousel.less" />
+    <Content Include="node_modules\bootstrap\less\close.less" />
+    <Content Include="node_modules\bootstrap\less\code.less" />
+    <Content Include="node_modules\bootstrap\less\component-animations.less" />
+    <Content Include="node_modules\bootstrap\less\dropdowns.less" />
+    <Content Include="node_modules\bootstrap\less\forms.less" />
+    <Content Include="node_modules\bootstrap\less\glyphicons.less" />
+    <Content Include="node_modules\bootstrap\less\grid.less" />
+    <Content Include="node_modules\bootstrap\less\input-groups.less" />
+    <Content Include="node_modules\bootstrap\less\jumbotron.less" />
+    <Content Include="node_modules\bootstrap\less\labels.less" />
+    <Content Include="node_modules\bootstrap\less\list-group.less" />
+    <Content Include="node_modules\bootstrap\less\media.less" />
+    <Content Include="node_modules\bootstrap\less\mixins.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\alerts.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\buttons.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\center-block.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\forms.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\gradients.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\grid.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\image.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\labels.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\list-group.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\opacity.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\pagination.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\panels.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\resize.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\size.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\table-row.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="node_modules\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="node_modules\bootstrap\less\modals.less" />
+    <Content Include="node_modules\bootstrap\less\navbar.less" />
+    <Content Include="node_modules\bootstrap\less\navs.less" />
+    <Content Include="node_modules\bootstrap\less\normalize.less" />
+    <Content Include="node_modules\bootstrap\less\pager.less" />
+    <Content Include="node_modules\bootstrap\less\pagination.less" />
+    <Content Include="node_modules\bootstrap\less\panels.less" />
+    <Content Include="node_modules\bootstrap\less\popovers.less" />
+    <Content Include="node_modules\bootstrap\less\print.less" />
+    <Content Include="node_modules\bootstrap\less\progress-bars.less" />
+    <Content Include="node_modules\bootstrap\less\responsive-embed.less" />
+    <Content Include="node_modules\bootstrap\less\responsive-utilities.less" />
+    <Content Include="node_modules\bootstrap\less\scaffolding.less" />
+    <Content Include="node_modules\bootstrap\less\tables.less" />
+    <Content Include="node_modules\bootstrap\less\theme.less" />
+    <Content Include="node_modules\bootstrap\less\thumbnails.less" />
+    <Content Include="node_modules\bootstrap\less\tooltip.less" />
+    <Content Include="node_modules\bootstrap\less\type.less" />
+    <Content Include="node_modules\bootstrap\less\utilities.less" />
+    <Content Include="node_modules\bootstrap\less\variables.less" />
+    <Content Include="node_modules\bootstrap\less\wells.less" />
+    <Content Include="node_modules\bootstrap\LICENSE" />
+    <Content Include="node_modules\bootstrap\package.json" />
+    <Content Include="node_modules\bootstrap\README.md" />
+    <Content Include="node_modules\grunt-contrib-concat\CHANGELOG" />
+    <Content Include="node_modules\grunt-contrib-concat\package.json" />
+    <Content Include="node_modules\grunt-contrib-concat\README.md" />
+    <Content Include="node_modules\grunt-contrib-uglify\CHANGELOG" />
+    <Content Include="node_modules\grunt-contrib-uglify\package.json" />
+    <Content Include="node_modules\grunt-contrib-uglify\README.md" />
+    <Content Include="node_modules\grunt-contrib-watch\CHANGELOG" />
+    <Content Include="node_modules\grunt-contrib-watch\package.json" />
+    <Content Include="node_modules\grunt-contrib-watch\README.md" />
+    <Content Include="node_modules\grunt\bin\grunt" />
+    <Content Include="node_modules\grunt\CHANGELOG" />
+    <Content Include="node_modules\grunt\LICENSE" />
+    <Content Include="node_modules\grunt\node_modules\.bin\grunt" />
+    <Content Include="node_modules\grunt\node_modules\.bin\grunt.cmd" />
+    <Content Include="node_modules\grunt\node_modules\grunt-cli\bin\grunt" />
+    <Content Include="node_modules\grunt\node_modules\grunt-cli\CHANGELOG.md" />
+    <Content Include="node_modules\grunt\node_modules\grunt-cli\completion\bash" />
+    <Content Include="node_modules\grunt\node_modules\grunt-cli\completion\zsh" />
+    <Content Include="node_modules\grunt\node_modules\grunt-cli\package.json" />
+    <Content Include="node_modules\grunt\node_modules\grunt-cli\README.md" />
+    <Content Include="node_modules\grunt\package.json" />
+    <Content Include="node_modules\grunt\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="package.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="node_modules\grunt-sass\license" />
+    <Content Include="node_modules\grunt-sass\package.json" />
+    <Content Include="node_modules\grunt-sass\readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\SASS\main.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\SASS\Layout\Layout.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="node_modules\angular\angular.min.js.gzip" />
+    <Content Include="node_modules\angular\angular.min.js.map" />
+    <Content Include="node_modules\angular\bower.json" />
+    <Content Include="node_modules\angular\LICENSE.md" />
+    <Content Include="node_modules\angular\package.json" />
+    <Content Include="node_modules\angular\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="node_modules\jquery\.editorconfig" />
+    <Content Include="node_modules\jquery\.jshintrc" />
+    <Content Include="node_modules\jquery\.npmignore" />
+    <Content Include="node_modules\jquery\component.json" />
+    <Content Include="node_modules\jquery\composer.json" />
+    <Content Include="node_modules\jquery\CONTRIBUTING.md" />
+    <Content Include="node_modules\jquery\jquery.min.map" />
+    <Content Include="node_modules\jquery\package.json" />
+    <Content Include="node_modules\jquery\README.md" />
+    <Content Include="node_modules\jquery\src\.jshintrc" />
+    <Content Include="node_modules\jquery\test\.jshintignore" />
+    <Content Include="node_modules\jquery\test\.jshintrc" />
+    <Content Include="node_modules\jquery\test\csp.php" />
+    <Content Include="node_modules\jquery\test\data\atom+xml.php" />
+    <Content Include="node_modules\jquery\test\data\echoData.php" />
+    <Content Include="node_modules\jquery\test\data\echoQuery.php" />
+    <Content Include="node_modules\jquery\test\data\errorWithText.php" />
+    <Content Include="node_modules\jquery\test\data\etag.php" />
+    <Content Include="node_modules\jquery\test\data\evalScript.php" />
+    <Content Include="node_modules\jquery\test\data\event\longLoadScript.php" />
+    <Content Include="node_modules\jquery\test\data\headers.php" />
+    <Content Include="node_modules\jquery\test\data\if_modified_since.php" />
+    <Content Include="node_modules\jquery\test\data\json.php" />
+    <Content Include="node_modules\jquery\test\data\jsonp.php" />
+    <Content Include="node_modules\jquery\test\data\name.php" />
+    <Content Include="node_modules\jquery\test\data\nocontent.php" />
+    <Content Include="node_modules\jquery\test\data\params_html.php" />
+    <Content Include="node_modules\jquery\test\data\script.php" />
+    <Content Include="node_modules\jquery\test\data\statusText.php" />
+    <Content Include="node_modules\jquery\test\data\test.php" />
+    <Content Include="node_modules\jquery\test\data\text.php" />
+    <Content Include="node_modules\jquery\test\data\with_fries_over_jsonp.php" />
+    <Content Include="node_modules\jquery\test\polluted.php" />
+    <Content Include="node_modules\jquery\test\xhtml.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\Fonts\NHL.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\SASS\Match\match.scss" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -6770,13 +6770,12 @@ button.close {
     height: 60px; }
   .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
     background-color: transparent;
-    color: #ccc; }
+    color: #ff7d00; }
   .navbar-inverse .navbar-brand p {
     margin-top: -15px; }
 
-.navbar-inverse navbar-header p {
-  color: white !important;
-  font-family: NHL; }
+.navbar-inverse .navbar-nav li a:hover, .navbar-inverse .navbar-nav li a:focus {
+  color: #ff7d00; }
 
 .navbar-nav {
   padding-top: 6.5px; }
@@ -6785,10 +6784,14 @@ button.close {
   margin-top: 22px; }
 
 .body-content {
-  margin-top: 81px; }
+  margin-top: 150px;
+  padding-bottom: 50px; }
 
 @media (max-width: 767px) {
   .navbar-brand {
     margin-top: -5px; }
   .navbar-toggle {
     margin-bottom: 20px; } }
+
+form label {
+  margin: 5px 0 5px 0; }
