@@ -209,6 +209,7 @@
     <Content Include="node_modules\jquery\test\unit\serialize.js" />
     <Content Include="node_modules\jquery\test\unit\support.js" />
     <Content Include="node_modules\jquery\test\unit\traversing.js" />
+    <Content Include="Scripts\app\app-bundle.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\components\match\match-controller.js" />
     <Content Include="Scripts\app\utils\api-client.js" />

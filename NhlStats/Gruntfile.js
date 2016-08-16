@@ -1,6 +1,7 @@
 ﻿module.exports = function (grunt) {
 
-    var scriptsToBundle = ['node_modules/angular/angular.js', 'node_modules/angular-route/angular-route.js', 'node_modules/jquery/jquery.js', 'node_modules/bootstrap/dist/js/bootstrap.js', 'Scripts/app/**/*.js'];
+    var scriptsToBundle = ['node_modules/angular/angular.js', 'node_modules/angular-route/angular-route.js', 'node_modules/jquery/jquery.js', 'node_modules/bootstrap/dist/js/bootstrap.js'];
+    var appScriptsToBundle = ['Scripts/app/**/*.js'];
     var stylesToBundle = ['node_modules/bootstrap/dist/css/bootstrap.css', 'Styles/main.css'];
 
     grunt.initConfig({
@@ -16,6 +17,10 @@
             styles: {
                 src: stylesToBundle,
                 dest: 'Styles/styles-bundle.css'
+            },
+            app: {
+                src: appScriptsToBundle,
+                dest: 'Scripts/App/app-bundle.js'
             }
         },
         sass: {
@@ -53,6 +58,10 @@
             concatScripts: {
                 files: scriptsToBundle,
                 tasks: ['concat:scripts']
+            },
+            concatApp: {
+                files: appScriptsToBundle,
+                tasks: ['concat:app']
             },
             concatStyles: {
                 files: stylesToBundle,

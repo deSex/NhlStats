@@ -1,22 +1,25 @@
-﻿nhlControllers.controller('matchController', ['apiClient', '$q', function (apiClient, $q) {
+﻿nhlControllers.controller('matchController', ['apiClient', '$q', '$scope', function (apiClient, $q, $scope) {
+    $scope.match = {};
+    $scope.init = function () {
+        $q.all([apiClient.getAllTeams(), apiClient.getAllPlayers()])
+            .then(function(responses) {
+                $scope.teams = responses[0];
+                $scope.match.teamOne = $scope.teams[0].TeamId;
+                $scope.match.teamTwo = $scope.teams[1].TeamId;
 
-    $scope.init(function() {
-        apiClient.getAllTeams()
-            .then(function(response) {
-                $scope.teams = response[0].content;
+                $scope.players = responses[1];
+
+                $scope.match.playerOneId = $scope.players[0].PlayerId;
+                $scope.match.playerTwoId = $scope.players[1].PlayerId;
             })
             .catch(function (error) {
                 return error;
             });
-    });
-    $scope.getLatestMatches(function () {
-        apiClient.getAllMatches()
-            .then(function (response) {
-                return response;
-            })
-            .catch(function (error) {
-                return error;
-            });
-    });
+    };
 
+    $scope.addMatch = function() {
+        if (!$scope.match.$IsValid) {
+            return;
+        }
+    };
 }]);
