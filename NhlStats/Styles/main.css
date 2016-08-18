@@ -19,6 +19,13 @@
 .navbar-inverse .navbar-nav li a:hover, .navbar-inverse .navbar-nav li a:focus {
   color: #ff7d00; }
 
+.btn-submit {
+  color: #9d9d9d;
+  background-color: black; }
+  .btn-submit:hover {
+    color: white;
+    background-color: #ff7d00; }
+
 .navbar-nav {
   padding-top: 6.5px; }
 
@@ -37,3 +44,24 @@
 
 form label {
   margin: 5px 0 5px 0; }
+
+form .team-logo {
+  min-height: 100px;
+  min-width: 100px;
+  max-height: 200px;
+  max-width: 200px; }
+
+form .spacer {
+  float: left;
+  display: inline-block;
+  margin-top: 150px; }
+
+form .teams {
+  overflow: hidden;
+  margin: 0 auto; }
+
+form .team {
+  display: inline-block;
+  float: left; }
+  form .team:first-of-type {
+    margin-left: 16%; }

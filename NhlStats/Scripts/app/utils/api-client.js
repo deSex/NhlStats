@@ -18,4 +18,10 @@
 			.then(function (response) { return response.data })
 			.catch(function (error) { return error });
     };
+
+    this.addMatch = function (match) {
+        return $http.post(baseUrl + '/matches/add', match)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
 }]);

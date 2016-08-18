@@ -32,3 +32,37 @@ C:\Projects\NhlStats\NhlStats.Api\bin\System.Web.Http.xml
 C:\Projects\NhlStats\NhlStats.Api\bin\System.Web.Http.WebHost.xml
 C:\Projects\NhlStats\NhlStats.Api\obj\Debug\NhlStats.Api.dll
 C:\Projects\NhlStats\NhlStats.Api\obj\Debug\NhlStats.Api.pdb
+C:\Projects\NHL Stats\NhlStats.Api\bin\roslyn\csc.exe
+C:\Projects\NHL Stats\NhlStats.Api\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Projects\NHL Stats\NhlStats.Api\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Projects\NHL Stats\NhlStats.Api\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Projects\NHL Stats\NhlStats.Api\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Projects\NHL Stats\NhlStats.Api\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Projects\NHL Stats\NhlStats.Api\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Projects\NHL Stats\NhlStats.Api\bin\roslyn\System.Collections.Immutable.dll
+C:\Projects\NHL Stats\NhlStats.Api\bin\roslyn\System.Reflection.Metadata.dll
+C:\Projects\NHL Stats\NhlStats.Api\bin\roslyn\vbc.exe
+C:\Projects\NHL Stats\NhlStats.Api\bin\roslyn\VBCSCompiler.exe
+C:\Projects\NHL Stats\NhlStats.Api\bin\roslyn\VBCSCompiler.exe.config
+C:\Projects\NHL Stats\NhlStats.Api\bin\NhlStats.Api.dll.config
+C:\Projects\NHL Stats\NhlStats.Api\bin\NhlStats.Api.dll
+C:\Projects\NHL Stats\NhlStats.Api\bin\NhlStats.Api.pdb
+C:\Projects\NHL Stats\NhlStats.Api\bin\EntityFramework.dll
+C:\Projects\NHL Stats\NhlStats.Api\bin\EntityFramework.SqlServer.dll
+C:\Projects\NHL Stats\NhlStats.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Projects\NHL Stats\NhlStats.Api\bin\Newtonsoft.Json.dll
+C:\Projects\NHL Stats\NhlStats.Api\bin\System.Net.Http.Formatting.dll
+C:\Projects\NHL Stats\NhlStats.Api\bin\System.Web.Cors.dll
+C:\Projects\NHL Stats\NhlStats.Api\bin\System.Web.Http.Cors.dll
+C:\Projects\NHL Stats\NhlStats.Api\bin\System.Web.Http.dll
+C:\Projects\NHL Stats\NhlStats.Api\bin\System.Web.Http.WebHost.dll
+C:\Projects\NHL Stats\NhlStats.Api\bin\EntityFramework.xml
+C:\Projects\NHL Stats\NhlStats.Api\bin\EntityFramework.SqlServer.xml
+C:\Projects\NHL Stats\NhlStats.Api\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Projects\NHL Stats\NhlStats.Api\bin\System.Web.Http.Cors.xml
+C:\Projects\NHL Stats\NhlStats.Api\bin\Newtonsoft.Json.xml
+C:\Projects\NHL Stats\NhlStats.Api\bin\System.Net.Http.Formatting.xml
+C:\Projects\NHL Stats\NhlStats.Api\bin\System.Web.Http.xml
+C:\Projects\NHL Stats\NhlStats.Api\bin\System.Web.Http.WebHost.xml
+C:\Projects\NHL Stats\NhlStats.Api\obj\Debug\NhlStats.Api.dll
+C:\Projects\NHL Stats\NhlStats.Api\obj\Debug\NhlStats.Api.pdb

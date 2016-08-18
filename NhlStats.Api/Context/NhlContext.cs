@@ -13,17 +13,6 @@ namespace NhlStats.Api.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Player>()
-                .HasMany(e => e.Matches)
-                .WithRequired(e => e.Player)
-                .HasForeignKey(e => e.PlayerOne)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Team>()
-                .HasMany(e => e.Matches)
-                .WithRequired(e => e.Team)
-                .HasForeignKey(e => e.TeamOne)
-                .WillCascadeOnDelete(false);
 
         }
     }

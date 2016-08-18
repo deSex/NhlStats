@@ -9,7 +9,6 @@ namespace NhlStats.Api.Entities
         [SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Team()
         {
-            Matches = new HashSet<Match>();
         }
 
         public int TeamId { get; set; }
@@ -25,9 +24,6 @@ namespace NhlStats.Api.Entities
         [Required]
         [StringLength(1)]
         public string EmblemUrl { get; set; }
-
-        [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public ICollection<Match> Matches { get; set; }
 
     }
 }

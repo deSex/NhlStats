@@ -9,10 +9,19 @@ namespace NhlStats.Api.Controllers
     public class MatchApiController : ApiController
     {
         [HttpPost]
-        [Route("api/matches/create")]
+        [Route("api/matches/add")]
         public bool Post([FromBody] Match match)
         {
-            return false;
+            if(match == null)
+            {
+                return false;
+            }
+            using (var db = new NhlContext())
+            {
+                db.Matches.Add(match);
+                db.SaveChanges();
+                return true;
+            }
         }
 
 

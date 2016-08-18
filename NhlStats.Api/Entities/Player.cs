@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 
 namespace NhlStats.Api.Entities
@@ -11,6 +12,7 @@ namespace NhlStats.Api.Entities
             Matches = new HashSet<Match>();
         }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PlayerId { get; set; }
 
         public string Name { get; set; }

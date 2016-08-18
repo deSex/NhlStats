@@ -2,4 +2,27 @@
     label {
         margin: 5px 0 5px 0;
     }
+
+    .team-logo {
+        min-height: 100px;
+        min-width: 100px;
+        max-height: 200px;
+        max-width: 200px;
+    }
+    .spacer{
+        float:left;
+        display:inline-block;
+        margin-top: 150px;
+    }
+    .teams{
+        overflow: hidden;
+        margin:0 auto;
+    }
+    .team {
+        display:inline-block;
+        float: left;
+        &:first-of-type{
+            margin-left: 16%;
+        }
+    }
 }

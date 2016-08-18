@@ -36,6 +36,15 @@
     }
 }
 
+.btn-submit{
+    color: #9d9d9d;
+    background-color: black;
+    &:hover{
+        color: white;
+        background-color: #ff7d00;
+    }
+}
+
 .navbar-nav {
     padding-top: 6.5px;
 }
