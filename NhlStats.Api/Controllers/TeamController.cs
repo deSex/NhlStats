@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 using NhlStats.Api.Context;
-using NhlStats.Api.Entities;
 
 namespace NhlStats.Api.Controllers
 {
@@ -10,15 +10,15 @@ namespace NhlStats.Api.Controllers
     {
         [HttpGet]
         [Route("api/teams/getall")]
-        public IEnumerable<Team> GetAll()
+        public HttpResponseMessage GetAll()
         {
             using (var db = new NhlContext())
             {
-                var query = (from b in db.Teams
-                    orderby b.Name
-                    select b).ToList();
+                var teams = (from b in db.Teams
+                             orderby b.Name
+                             select b).ToList();
 
-                return query;
+                return Request.CreateResponse(HttpStatusCode.OK, new { content = teams });
             }
         }
     }

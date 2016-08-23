@@ -1,13 +1,16 @@
 ﻿nhlControllers.controller('matchController', ['apiClient', '$q', '$scope', function (apiClient, $q, $scope) {
     $scope.model = {};
+    $scope.success = false;
+    $scope.showError = false;
+
     $scope.init = function () {
         $q.all([apiClient.getAllTeams(), apiClient.getAllPlayers()])
             .then(function (responses) {
-                $scope.teams = responses[0];
+                $scope.teams = responses[0].content;
                 $scope.model.teamOne = $scope.teams[0];
                 $scope.model.teamTwo = $scope.teams[1];
 
-                $scope.players = responses[1];
+                $scope.players = responses[1].content;
 
                 $scope.model.playerOne = $scope.players[0];
                 $scope.model.playerTwo = $scope.players[1];
@@ -33,9 +36,22 @@
 
         apiClient.addMatch($scope.match)
             .then(function (response) {
-
+                $scope.success = true;
+                $scope.showError = false;
             }).catch(function (error) {
+                $scope.showError = true;
             });
 
     };
+
+
+    $scope.getLatestMatches = function() {
+        apiClient.getAllMatches()
+            .then(function(response) {
+                $scope.matches = response.content;
+            })
+            .catch(function(error) {
+
+            });
+    }
 }]);

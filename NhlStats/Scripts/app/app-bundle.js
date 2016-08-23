@@ -1,4 +1,4 @@
-/*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 */var nhlApp = angular.module('nhlApp', ['ngRoute', 'nhlControllers', 'nhlServices']);
+/*!2016-08-23 *//*!2016-08-23 *//*!2016-08-23 *//*!2016-08-23 *//*!2016-08-23 *//*!2016-08-23 *//*!2016-08-23 *//*!2016-08-23 *//*!2016-08-23 *//*!2016-08-23 *//*!2016-08-23 *//*!2016-08-23 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-18 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 *//*!2016-08-16 */var nhlApp = angular.module('nhlApp', ['ngRoute', 'nhlControllers', 'nhlServices']);
 
 var nhlControllers = angular.module('nhlControllers', []);
 var nhlServices = angular.module('nhlServices', []);
@@ -3798,6 +3798,1362 @@ nhlApp.config(['$locationProvider', '$routeProvider',
               templateUrl: 'Views/Match/Add.html'
           }).
           otherwise('/');
+
+        $locationProvider.html5Mode(true);
+    }
+]);
+
+var nhlApp = angular.module('nhlApp', ['ngRoute', 'nhlControllers', 'nhlServices']);
+var nhlControllers = angular.module('nhlControllers', []);
+var nhlServices = angular.module('nhlServices', []);
+nhlControllers.controller('matchController', ['apiClient', '$q', '$scope', function (apiClient, $q, $scope) {
+    $scope.model = {};
+    $scope.success = false;
+    $scope.showError = false;
+
+    $scope.init = function () {
+        $q.all([apiClient.getAllTeams(), apiClient.getAllPlayers()])
+            .then(function (responses) {
+                $scope.teams = responses[0];
+                $scope.model.teamOne = $scope.teams[0];
+                $scope.model.teamTwo = $scope.teams[1];
+
+                $scope.players = responses[1];
+
+                $scope.model.playerOne = $scope.players[0];
+                $scope.model.playerTwo = $scope.players[1];
+            })
+            .catch(function (error) {
+                return error;
+            });
+        $scope.model.teamOneScore = 0;
+        $scope.model.teamTwoScore = 0;
+    };
+
+    $scope.addMatch = function () {
+
+        $scope.match = {
+            MatchId: null,
+            PlayerOne: $scope.model.playerOne.PlayerId,
+            PlayerTwo: $scope.model.playerTwo.PlayerId,
+            TeamOne: $scope.model.teamOne.TeamId,
+            TeamTwo: $scope.model.teamTwo.TeamId,
+            PlayerOneScore: $scope.model.teamOneScore,
+            PlayerTwoScore: $scope.model.teamTwoScore
+        };
+
+        apiClient.addMatch($scope.match)
+            .then(function (response) {
+                if (response === true) {
+                    $scope.success = true;
+                    $scope.showError = false;
+                }
+                else if (response === false) {
+                    $scope.showError = true;
+                }
+            }).catch(function (error) {
+                $scope.showError = true;
+            });
+
+    };
+
+
+    $scope.getLatestMatches = function() {
+        apiClient.getLatestMatches()
+            .then(function(response) {
+
+            })
+            .catch(function(error) {
+
+            });
+    }
+}]);
+nhlServices.service('apiClient', ['$http', function ($http) {
+    var baseUrl = 'http://nhlstats.api.local/api';
+
+    this.getAllMatches = function () {
+        return $http.get(baseUrl + '/matches/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllTeams = function () {
+        return $http.get(baseUrl + '/teams/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllPlayers = function () {
+        return $http.get(baseUrl + '/players/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.addMatch = function (match) {
+        return $http.post(baseUrl + '/matches/add', match)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+}]);
+nhlApp.config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'Views/Home.html'
+            }).
+          when('/add', {
+              templateUrl: 'Views/Match/Add.html'
+          }).
+          otherwise('/');
+
+        $locationProvider.html5Mode(true);
+    }
+]);
+
+var nhlApp = angular.module('nhlApp', ['ngRoute', 'nhlControllers', 'nhlServices']);
+var nhlControllers = angular.module('nhlControllers', []);
+var nhlServices = angular.module('nhlServices', []);
+nhlControllers.controller('matchController', ['apiClient', '$q', '$scope', function (apiClient, $q, $scope) {
+    $scope.model = {};
+    $scope.success = false;
+    $scope.showError = false;
+
+    $scope.init = function () {
+        $q.all([apiClient.getAllTeams(), apiClient.getAllPlayers()])
+            .then(function (responses) {
+                $scope.teams = responses[0];
+                $scope.model.teamOne = $scope.teams[0];
+                $scope.model.teamTwo = $scope.teams[1];
+
+                $scope.players = responses[1];
+
+                $scope.model.playerOne = $scope.players[0];
+                $scope.model.playerTwo = $scope.players[1];
+            })
+            .catch(function (error) {
+                return error;
+            });
+        $scope.model.teamOneScore = 0;
+        $scope.model.teamTwoScore = 0;
+    };
+
+    $scope.addMatch = function () {
+
+        $scope.match = {
+            MatchId: null,
+            PlayerOne: $scope.model.playerOne.PlayerId,
+            PlayerTwo: $scope.model.playerTwo.PlayerId,
+            TeamOne: $scope.model.teamOne.TeamId,
+            TeamTwo: $scope.model.teamTwo.TeamId,
+            PlayerOneScore: $scope.model.teamOneScore,
+            PlayerTwoScore: $scope.model.teamTwoScore
+        };
+
+        apiClient.addMatch($scope.match)
+            .then(function (response) {
+                if (response === true) {
+                    $scope.success = true;
+                    $scope.showError = false;
+                }
+                else if (response === false) {
+                    $scope.showError = true;
+                }
+            }).catch(function (error) {
+                $scope.showError = true;
+            });
+
+    };
+
+
+    $scope.getLatestMatches = function() {
+        apiClient.getLatestMatches()
+            .then(function(response) {
+                $scope.matches = response;
+            })
+            .catch(function(error) {
+
+            });
+    }
+}]);
+nhlServices.service('apiClient', ['$http', function ($http) {
+    var baseUrl = 'http://nhlstats.api.local/api';
+
+    this.getAllMatches = function () {
+        return $http.get(baseUrl + '/matches/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllTeams = function () {
+        return $http.get(baseUrl + '/teams/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllPlayers = function () {
+        return $http.get(baseUrl + '/players/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.addMatch = function (match) {
+        return $http.post(baseUrl + '/matches/add', match)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+}]);
+nhlApp.config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'Views/Home.html'
+            }).
+          when('/add', {
+              templateUrl: 'Views/Match/Add.html'
+          }).
+          otherwise('/');
+
+        $locationProvider.html5Mode(true);
+    }
+]);
+
+var nhlApp = angular.module('nhlApp', ['ngRoute', 'nhlControllers', 'nhlServices']);
+var nhlControllers = angular.module('nhlControllers', []);
+var nhlServices = angular.module('nhlServices', []);
+nhlControllers.controller('matchController', ['apiClient', '$q', '$scope', function (apiClient, $q, $scope) {
+    $scope.model = {};
+    $scope.success = false;
+    $scope.showError = false;
+
+    $scope.init = function () {
+        $q.all([apiClient.getAllTeams(), apiClient.getAllPlayers()])
+            .then(function (responses) {
+                $scope.teams = responses[0];
+                $scope.model.teamOne = $scope.teams[0];
+                $scope.model.teamTwo = $scope.teams[1];
+
+                $scope.players = responses[1];
+
+                $scope.model.playerOne = $scope.players[0];
+                $scope.model.playerTwo = $scope.players[1];
+            })
+            .catch(function (error) {
+                return error;
+            });
+        $scope.model.teamOneScore = 0;
+        $scope.model.teamTwoScore = 0;
+    };
+
+    $scope.addMatch = function () {
+
+        $scope.match = {
+            MatchId: null,
+            PlayerOne: $scope.model.playerOne.PlayerId,
+            PlayerTwo: $scope.model.playerTwo.PlayerId,
+            TeamOne: $scope.model.teamOne.TeamId,
+            TeamTwo: $scope.model.teamTwo.TeamId,
+            PlayerOneScore: $scope.model.teamOneScore,
+            PlayerTwoScore: $scope.model.teamTwoScore
+        };
+
+        apiClient.addMatch($scope.match)
+            .then(function (response) {
+                if (response === true) {
+                    $scope.success = true;
+                    $scope.showError = false;
+                }
+                else if (response === false) {
+                    $scope.showError = true;
+                }
+            }).catch(function (error) {
+                $scope.showError = true;
+            });
+
+    };
+
+
+    $scope.getLatestMatches = function() {
+        apiClient.getAllMatches()
+            .then(function(response) {
+                $scope.matches = response;
+            })
+            .catch(function(error) {
+
+            });
+    }
+}]);
+nhlServices.service('apiClient', ['$http', function ($http) {
+    var baseUrl = 'http://nhlstats.api.local/api';
+
+    this.getAllMatches = function () {
+        return $http.get(baseUrl + '/matches/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllTeams = function () {
+        return $http.get(baseUrl + '/teams/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllPlayers = function () {
+        return $http.get(baseUrl + '/players/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.addMatch = function (match) {
+        return $http.post(baseUrl + '/matches/add', match)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+}]);
+nhlApp.config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'Views/Home.html'
+            }).
+          when('/add', {
+              templateUrl: 'Views/Match/Add.html'
+          }).
+          otherwise('/');
+
+        $locationProvider.html5Mode(true);
+    }
+]);
+
+var nhlApp = angular.module('nhlApp', ['ngRoute', 'nhlControllers', 'nhlServices']);
+var nhlControllers = angular.module('nhlControllers', []);
+var nhlServices = angular.module('nhlServices', []);
+nhlControllers.controller('matchController', ['apiClient', '$q', '$scope', function (apiClient, $q, $scope) {
+    $scope.model = {};
+    $scope.success = false;
+    $scope.showError = false;
+
+    $scope.init = function () {
+        $q.all([apiClient.getAllTeams(), apiClient.getAllPlayers()])
+            .then(function (responses) {
+                $scope.teams = responses[0];
+                $scope.model.teamOne = $scope.teams[0];
+                $scope.model.teamTwo = $scope.teams[1];
+
+                $scope.players = responses[1];
+
+                $scope.model.playerOne = $scope.players[0];
+                $scope.model.playerTwo = $scope.players[1];
+            })
+            .catch(function (error) {
+                return error;
+            });
+        $scope.model.teamOneScore = 0;
+        $scope.model.teamTwoScore = 0;
+    };
+
+    $scope.addMatch = function () {
+
+        $scope.match = {
+            MatchId: null,
+            PlayerOne: $scope.model.playerOne.PlayerId,
+            PlayerTwo: $scope.model.playerTwo.PlayerId,
+            TeamOne: $scope.model.teamOne.TeamId,
+            TeamTwo: $scope.model.teamTwo.TeamId,
+            PlayerOneScore: $scope.model.teamOneScore,
+            PlayerTwoScore: $scope.model.teamTwoScore
+        };
+
+        apiClient.addMatch($scope.match)
+            .then(function (response) {
+                $scope.success = true;
+                $scope.showError = false;
+            }).catch(function (error) {
+                $scope.showError = true;
+            });
+
+    };
+
+
+    $scope.getLatestMatches = function() {
+        apiClient.getAllMatches()
+            .then(function(response) {
+                $scope.matches = response;
+            })
+            .catch(function(error) {
+
+            });
+    }
+}]);
+nhlServices.service('apiClient', ['$http', function ($http) {
+    var baseUrl = 'http://nhlstats.api.local/api';
+
+    this.getAllMatches = function () {
+        return $http.get(baseUrl + '/matches/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllTeams = function () {
+        return $http.get(baseUrl + '/teams/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllPlayers = function () {
+        return $http.get(baseUrl + '/players/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.addMatch = function (match) {
+        return $http.post(baseUrl + '/matches/add', match)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+}]);
+nhlApp.config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'Views/Home.html'
+            }).
+          when('/add', {
+              templateUrl: 'Views/Match/Add.html'
+          }).
+          otherwise('/');
+
+        $locationProvider.html5Mode(true);
+    }
+]);
+
+var nhlApp = angular.module('nhlApp', ['ngRoute', 'nhlControllers', 'nhlServices']);
+var nhlControllers = angular.module('nhlControllers', []);
+var nhlServices = angular.module('nhlServices', []);
+nhlControllers.controller('matchController', ['apiClient', '$q', '$scope', function (apiClient, $q, $scope) {
+    $scope.model = {};
+    $scope.success = false;
+    $scope.showError = false;
+
+    $scope.init = function () {
+        $q.all([apiClient.getAllTeams(), apiClient.getAllPlayers()])
+            .then(function (responses) {
+                $scope.teams = responses[0];
+                $scope.model.teamOne = $scope.teams[0];
+                $scope.model.teamTwo = $scope.teams[1];
+
+                $scope.players = responses[1];
+
+                $scope.model.playerOne = $scope.players[0];
+                $scope.model.playerTwo = $scope.players[1];
+            })
+            .catch(function (error) {
+                return error;
+            });
+        $scope.model.teamOneScore = 0;
+        $scope.model.teamTwoScore = 0;
+    };
+
+    $scope.addMatch = function () {
+
+        $scope.match = {
+            MatchId: null,
+            PlayerOne: $scope.model.playerOne.PlayerId,
+            PlayerTwo: $scope.model.playerTwo.PlayerId,
+            TeamOne: $scope.model.teamOne.TeamId,
+            TeamTwo: $scope.model.teamTwo.TeamId,
+            PlayerOneScore: $scope.model.teamOneScore,
+            PlayerTwoScore: $scope.model.teamTwoScore
+        };
+
+        apiClient.addMatch($scope.match)
+            .then(function (response) {
+                $scope.success = true;
+                $scope.showError = false;
+            }).catch(function (error) {
+                $scope.showError = true;
+            });
+
+    };
+
+
+    $scope.getLatestMatches = function() {
+        apiClient.getAllMatches()
+            .then(function(response) {
+                $scope.matches = response.content;
+            })
+            .catch(function(error) {
+
+            });
+    }
+}]);
+nhlServices.service('apiClient', ['$http', function ($http) {
+    var baseUrl = 'http://nhlstats.api.local/api';
+
+    this.getAllMatches = function () {
+        return $http.get(baseUrl + '/matches/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllTeams = function () {
+        return $http.get(baseUrl + '/teams/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllPlayers = function () {
+        return $http.get(baseUrl + '/players/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.addMatch = function (match) {
+        return $http.post(baseUrl + '/matches/add', match)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+}]);
+nhlApp.config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'Views/Home.html'
+            }).
+          when('/add', {
+              templateUrl: 'Views/Match/Add.html'
+          }).
+          otherwise('/');
+
+        $locationProvider.html5Mode(true);
+    }
+]);
+
+var nhlApp = angular.module('nhlApp', ['ngRoute', 'nhlControllers', 'nhlServices']);
+var nhlControllers = angular.module('nhlControllers', []);
+var nhlServices = angular.module('nhlServices', []);
+nhlControllers.controller('matchController', ['apiClient', '$q', '$scope', function (apiClient, $q, $scope) {
+    $scope.model = {};
+    $scope.success = false;
+    $scope.showError = false;
+
+    $scope.init = function () {
+        $q.all([apiClient.getAllTeams(), apiClient.getAllPlayers()])
+            .then(function (responses) {
+                $scope.teams = responses[0].content;
+                $scope.model.teamOne = $scope.teams[0];
+                $scope.model.teamTwo = $scope.teams[1];
+
+                $scope.players = responses[1].content;
+
+                $scope.model.playerOne = $scope.players[0];
+                $scope.model.playerTwo = $scope.players[1];
+            })
+            .catch(function (error) {
+                return error;
+            });
+        $scope.model.teamOneScore = 0;
+        $scope.model.teamTwoScore = 0;
+    };
+
+    $scope.addMatch = function () {
+
+        $scope.match = {
+            MatchId: null,
+            PlayerOne: $scope.model.playerOne.PlayerId,
+            PlayerTwo: $scope.model.playerTwo.PlayerId,
+            TeamOne: $scope.model.teamOne.TeamId,
+            TeamTwo: $scope.model.teamTwo.TeamId,
+            PlayerOneScore: $scope.model.teamOneScore,
+            PlayerTwoScore: $scope.model.teamTwoScore
+        };
+
+        apiClient.addMatch($scope.match)
+            .then(function (response) {
+                $scope.success = true;
+                $scope.showError = false;
+            }).catch(function (error) {
+                $scope.showError = true;
+            });
+
+    };
+
+
+    $scope.getLatestMatches = function() {
+        apiClient.getAllMatches()
+            .then(function(response) {
+                $scope.matches = response.content;
+            })
+            .catch(function(error) {
+
+            });
+    }
+}]);
+nhlServices.service('apiClient', ['$http', function ($http) {
+    var baseUrl = 'http://nhlstats.api.local/api';
+
+    this.getAllMatches = function () {
+        return $http.get(baseUrl + '/matches/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllTeams = function () {
+        return $http.get(baseUrl + '/teams/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllPlayers = function () {
+        return $http.get(baseUrl + '/players/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.addMatch = function (match) {
+        return $http.post(baseUrl + '/matches/add', match)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+}]);
+nhlApp.config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'Views/Home.html'
+            }).
+          when('/add', {
+              templateUrl: 'Views/Match/Add.html'
+          }).
+          otherwise('/');
+
+        $locationProvider.html5Mode(true);
+    }
+]);
+
+var nhlApp = angular.module('nhlApp', ['ngRoute', 'nhlControllers', 'nhlServices']);
+var nhlControllers = angular.module('nhlControllers', []);
+var nhlServices = angular.module('nhlServices', []);
+nhlControllers.controller('matchController', ['apiClient', '$q', '$scope', function (apiClient, $q, $scope) {
+    $scope.model = {};
+    $scope.success = false;
+    $scope.showError = false;
+
+    $scope.init = function () {
+        $q.all([apiClient.getAllTeams(), apiClient.getAllPlayers()])
+            .then(function (responses) {
+                $scope.teams = responses[0].content;
+                $scope.model.teamOne = $scope.teams[0];
+                $scope.model.teamTwo = $scope.teams[1];
+
+                $scope.players = responses[1].content;
+
+                $scope.model.playerOne = $scope.players[0];
+                $scope.model.playerTwo = $scope.players[1];
+            })
+            .catch(function (error) {
+                return error;
+            });
+        $scope.model.teamOneScore = 0;
+        $scope.model.teamTwoScore = 0;
+    };
+
+    $scope.addMatch = function () {
+
+        $scope.match = {
+            MatchId: null,
+            PlayerOne: $scope.model.playerOne.PlayerId,
+            PlayerTwo: $scope.model.playerTwo.PlayerId,
+            TeamOne: $scope.model.teamOne.TeamId,
+            TeamTwo: $scope.model.teamTwo.TeamId,
+            PlayerOneScore: $scope.model.teamOneScore,
+            PlayerTwoScore: $scope.model.teamTwoScore
+        };
+
+        apiClient.addMatch($scope.match)
+            .then(function (response) {
+                $scope.success = true;
+                $scope.showError = false;
+            }).catch(function (error) {
+                $scope.showError = true;
+            });
+
+    };
+
+
+    $scope.getLatestMatches = function() {
+        apiClient.getAllMatches()
+            .then(function(response) {
+                $scope.matches = response.content;
+            })
+            .catch(function(error) {
+
+            });
+    }
+}]);
+nhlControllers.controller('playerController', ['apiClient', '$scope', function (apiClient, $scope) {
+    $scope.getAllPlayers = function () {
+        apiClient.getAllPlayers()
+            .then(function (response) {
+                $scope.players = response.content;
+            })
+            .catch(function (error) {
+            });
+    }
+}]);
+nhlServices.service('apiClient', ['$http', function ($http) {
+    var baseUrl = 'http://nhlstats.api.local/api';
+
+    this.getAllMatches = function () {
+        return $http.get(baseUrl + '/matches/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllTeams = function () {
+        return $http.get(baseUrl + '/teams/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllPlayers = function () {
+        return $http.get(baseUrl + '/players/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.addMatch = function (match) {
+        return $http.post(baseUrl + '/matches/add', match)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+}]);
+nhlApp.config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'Views/Home.html'
+            }).
+          when('/add', {
+              templateUrl: 'Views/Match/Add.html'
+          })
+            .when('/statistics/playerId',
+            {
+                templateUrl: 'Views/Statistics/Player.html'
+            }).otherwise('/');
+
+        $locationProvider.html5Mode(true);
+    }
+]);
+
+var nhlApp = angular.module('nhlApp', ['ngRoute', 'nhlControllers', 'nhlServices']);
+var nhlControllers = angular.module('nhlControllers', []);
+var nhlServices = angular.module('nhlServices', []);
+nhlControllers.controller('matchController', ['apiClient', '$q', '$scope', function (apiClient, $q, $scope) {
+    $scope.model = {};
+    $scope.success = false;
+    $scope.showError = false;
+
+    $scope.init = function () {
+        $q.all([apiClient.getAllTeams(), apiClient.getAllPlayers()])
+            .then(function (responses) {
+                $scope.teams = responses[0].content;
+                $scope.model.teamOne = $scope.teams[0];
+                $scope.model.teamTwo = $scope.teams[1];
+
+                $scope.players = responses[1].content;
+
+                $scope.model.playerOne = $scope.players[0];
+                $scope.model.playerTwo = $scope.players[1];
+            })
+            .catch(function (error) {
+                return error;
+            });
+        $scope.model.teamOneScore = 0;
+        $scope.model.teamTwoScore = 0;
+    };
+
+    $scope.addMatch = function () {
+
+        $scope.match = {
+            MatchId: null,
+            PlayerOne: $scope.model.playerOne.PlayerId,
+            PlayerTwo: $scope.model.playerTwo.PlayerId,
+            TeamOne: $scope.model.teamOne.TeamId,
+            TeamTwo: $scope.model.teamTwo.TeamId,
+            PlayerOneScore: $scope.model.teamOneScore,
+            PlayerTwoScore: $scope.model.teamTwoScore
+        };
+
+        apiClient.addMatch($scope.match)
+            .then(function (response) {
+                $scope.success = true;
+                $scope.showError = false;
+            }).catch(function (error) {
+                $scope.showError = true;
+            });
+
+    };
+
+
+    $scope.getLatestMatches = function() {
+        apiClient.getAllMatches()
+            .then(function(response) {
+                $scope.matches = response.content;
+            })
+            .catch(function(error) {
+
+            });
+    }
+}]);
+nhlControllers.controller('playerController', ['apiClient', '$scope', function (apiClient, $scope) {
+    $scope.getAllPlayers = function () {
+        apiClient.getAllPlayers()
+            .then(function (response) {
+                $scope.players = response.content;
+            })
+            .catch(function (error) {
+            });
+    }
+}]);
+nhlServices.service('apiClient', ['$http', function ($http) {
+    var baseUrl = 'http://nhlstats.api.local/api';
+
+    this.getAllMatches = function () {
+        return $http.get(baseUrl + '/matches/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllTeams = function () {
+        return $http.get(baseUrl + '/teams/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllPlayers = function () {
+        return $http.get(baseUrl + '/players/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.addMatch = function (match) {
+        return $http.post(baseUrl + '/matches/add', match)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+}]);
+nhlApp.config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'Views/Home.html'
+            }).
+          when('/add', {
+              templateUrl: 'Views/Match/Add.html'
+          })
+            .when('/statistics/:playerName',
+            {
+                templateUrl: 'Views/Statistics/Player.html'
+            }).otherwise('/');
+
+        $locationProvider.html5Mode(true);
+    }
+]);
+
+var nhlApp = angular.module('nhlApp', ['ngRoute', 'nhlControllers', 'nhlServices']);
+var nhlControllers = angular.module('nhlControllers', []);
+var nhlServices = angular.module('nhlServices', []);
+nhlControllers.controller('matchController', ['apiClient', '$q', '$scope', function (apiClient, $q, $scope) {
+    $scope.model = {};
+    $scope.success = false;
+    $scope.showError = false;
+
+    $scope.init = function () {
+        $q.all([apiClient.getAllTeams(), apiClient.getAllPlayers()])
+            .then(function (responses) {
+                $scope.teams = responses[0].content;
+                $scope.model.teamOne = $scope.teams[0];
+                $scope.model.teamTwo = $scope.teams[1];
+
+                $scope.players = responses[1].content;
+
+                $scope.model.playerOne = $scope.players[0];
+                $scope.model.playerTwo = $scope.players[1];
+            })
+            .catch(function (error) {
+                return error;
+            });
+        $scope.model.teamOneScore = 0;
+        $scope.model.teamTwoScore = 0;
+    };
+
+    $scope.addMatch = function () {
+
+        $scope.match = {
+            MatchId: null,
+            PlayerOne: $scope.model.playerOne.PlayerId,
+            PlayerTwo: $scope.model.playerTwo.PlayerId,
+            TeamOne: $scope.model.teamOne.TeamId,
+            TeamTwo: $scope.model.teamTwo.TeamId,
+            PlayerOneScore: $scope.model.teamOneScore,
+            PlayerTwoScore: $scope.model.teamTwoScore
+        };
+
+        apiClient.addMatch($scope.match)
+            .then(function (response) {
+                $scope.success = true;
+                $scope.showError = false;
+            }).catch(function (error) {
+                $scope.showError = true;
+            });
+
+    };
+
+
+    $scope.getLatestMatches = function() {
+        apiClient.getAllMatches()
+            .then(function(response) {
+                $scope.matches = response.content;
+            })
+            .catch(function(error) {
+
+            });
+    }
+}]);
+nhlControllers.controller('playerController', ['apiClient', '$scope', function (apiClient, $scope) {
+    $scope.getAllPlayers = function () {
+        apiClient.getAllPlayers()
+            .then(function (response) {
+                $scope.players = response.content;
+            })
+            .catch(function (error) {
+            });
+    }
+}]);
+nhlServices.service('apiClient', ['$http', function ($http) {
+    var baseUrl = 'http://nhlstats.api.local/api';
+
+    this.getAllMatches = function () {
+        return $http.get(baseUrl + '/matches/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllTeams = function () {
+        return $http.get(baseUrl + '/teams/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllPlayers = function () {
+        return $http.get(baseUrl + '/players/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.addMatch = function (match) {
+        return $http.post(baseUrl + '/matches/add', match)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+}]);
+nhlApp.config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'Views/Home.html'
+            }).
+          when('/add', {
+              templateUrl: 'Views/Match/Add.html'
+          })
+            .when('/statistics/:playerId',
+            {
+                templateUrl: 'Views/Statistics/Player.html'
+            }).otherwise('/');
+
+        $locationProvider.html5Mode(true);
+    }
+]);
+
+var nhlApp = angular.module('nhlApp', ['ngRoute', 'nhlControllers', 'nhlServices']);
+var nhlControllers = angular.module('nhlControllers', []);
+var nhlServices = angular.module('nhlServices', []);
+nhlControllers.controller('matchController', ['apiClient', '$q', '$scope', function (apiClient, $q, $scope) {
+    $scope.model = {};
+    $scope.success = false;
+    $scope.showError = false;
+
+    $scope.init = function () {
+        $q.all([apiClient.getAllTeams(), apiClient.getAllPlayers()])
+            .then(function (responses) {
+                $scope.teams = responses[0].content;
+                $scope.model.teamOne = $scope.teams[0];
+                $scope.model.teamTwo = $scope.teams[1];
+
+                $scope.players = responses[1].content;
+
+                $scope.model.playerOne = $scope.players[0];
+                $scope.model.playerTwo = $scope.players[1];
+            })
+            .catch(function (error) {
+                return error;
+            });
+        $scope.model.teamOneScore = 0;
+        $scope.model.teamTwoScore = 0;
+    };
+
+    $scope.addMatch = function () {
+
+        $scope.match = {
+            MatchId: null,
+            PlayerOne: $scope.model.playerOne.PlayerId,
+            PlayerTwo: $scope.model.playerTwo.PlayerId,
+            TeamOne: $scope.model.teamOne.TeamId,
+            TeamTwo: $scope.model.teamTwo.TeamId,
+            PlayerOneScore: $scope.model.teamOneScore,
+            PlayerTwoScore: $scope.model.teamTwoScore
+        };
+
+        apiClient.addMatch($scope.match)
+            .then(function (response) {
+                $scope.success = true;
+                $scope.showError = false;
+            }).catch(function (error) {
+                $scope.showError = true;
+            });
+
+    };
+
+
+    $scope.getLatestMatches = function() {
+        apiClient.getAllMatches()
+            .then(function(response) {
+                $scope.matches = response.content;
+            })
+            .catch(function(error) {
+
+            });
+    }
+}]);
+nhlControllers.controller('playerController', ['apiClient', '$scope', function (apiClient, $scope) {
+    $scope.getAllPlayers = function () {
+        apiClient.getAllPlayers()
+            .then(function (response) {
+                $scope.players = response.content;
+            })
+            .catch(function (error) {
+            });
+    }
+
+    $scope.init = function() {
+
+    };
+}]);
+nhlServices.service('apiClient', ['$http', function ($http) {
+    var baseUrl = 'http://nhlstats.api.local/api';
+
+    this.getAllMatches = function () {
+        return $http.get(baseUrl + '/matches/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllTeams = function () {
+        return $http.get(baseUrl + '/teams/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllPlayers = function () {
+        return $http.get(baseUrl + '/players/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+    this.getPlayer = function (playerId) {
+        return $http.get(baseUrl + '/players/get', playerId)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.addMatch = function (match) {
+        return $http.post(baseUrl + '/matches/add', match)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+}]);
+nhlApp.config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'Views/Home.html'
+            }).
+          when('/add', {
+              templateUrl: 'Views/Match/Add.html'
+          })
+            .when('/statistics/:playerId',
+            {
+                templateUrl: 'Views/Statistics/Player.html'
+            }).otherwise('/');
+
+        $locationProvider.html5Mode(true);
+    }
+]);
+
+var nhlApp = angular.module('nhlApp', ['ngRoute', 'nhlControllers', 'nhlServices']);
+var nhlControllers = angular.module('nhlControllers', []);
+var nhlServices = angular.module('nhlServices', []);
+nhlControllers.controller('matchController', ['apiClient', '$q', '$scope', function (apiClient, $q, $scope) {
+    $scope.model = {};
+    $scope.success = false;
+    $scope.showError = false;
+
+    $scope.init = function () {
+        $q.all([apiClient.getAllTeams(), apiClient.getAllPlayers()])
+            .then(function (responses) {
+                $scope.teams = responses[0].content;
+                $scope.model.teamOne = $scope.teams[0];
+                $scope.model.teamTwo = $scope.teams[1];
+
+                $scope.players = responses[1].content;
+
+                $scope.model.playerOne = $scope.players[0];
+                $scope.model.playerTwo = $scope.players[1];
+            })
+            .catch(function (error) {
+                return error;
+            });
+        $scope.model.teamOneScore = 0;
+        $scope.model.teamTwoScore = 0;
+    };
+
+    $scope.addMatch = function () {
+
+        $scope.match = {
+            MatchId: null,
+            PlayerOne: $scope.model.playerOne.PlayerId,
+            PlayerTwo: $scope.model.playerTwo.PlayerId,
+            TeamOne: $scope.model.teamOne.TeamId,
+            TeamTwo: $scope.model.teamTwo.TeamId,
+            PlayerOneScore: $scope.model.teamOneScore,
+            PlayerTwoScore: $scope.model.teamTwoScore
+        };
+
+        apiClient.addMatch($scope.match)
+            .then(function (response) {
+                $scope.success = true;
+                $scope.showError = false;
+            }).catch(function (error) {
+                $scope.showError = true;
+            });
+
+    };
+
+
+    $scope.getLatestMatches = function() {
+        apiClient.getAllMatches()
+            .then(function(response) {
+                $scope.matches = response.content;
+            })
+            .catch(function(error) {
+
+            });
+    }
+}]);
+nhlControllers.controller('playerController', ['apiClient', '$scope', '$routeParams', function (apiClient, $scope, $routeParams) {
+    $scope.getAllPlayers = function () {
+        apiClient.getAllPlayers()
+            .then(function (response) {
+                $scope.players = response.content;
+            })
+            .catch(function (error) {
+            });
+    }
+
+    $scope.init = function () {
+        apiClient.getPlayer($routeParams.playerId)
+            .then(function (response) {
+                $scope.player = response.content;
+            })
+            .catch(function () {
+
+            });
+    };
+}]);
+nhlServices.service('apiClient', ['$http', function ($http) {
+    var baseUrl = 'http://nhlstats.api.local/api';
+
+    this.getAllMatches = function () {
+        return $http.get(baseUrl + '/matches/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllTeams = function () {
+        return $http.get(baseUrl + '/teams/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllPlayers = function () {
+        return $http.get(baseUrl + '/players/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+    this.getPlayer = function (playerId) {
+        return $http.post(baseUrl + '/players/get', playerId)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.addMatch = function (match) {
+        return $http.post(baseUrl + '/matches/add', match)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+}]);
+nhlApp.config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'Views/Home.html'
+            }).
+          when('/add', {
+              templateUrl: 'Views/Match/Add.html'
+          })
+            .when('/statistics/:playerId',
+            {
+                templateUrl: 'Views/Statistics/Player.html'
+            }).otherwise('/');
+
+        $locationProvider.html5Mode(true);
+    }
+]);
+
+var nhlApp = angular.module('nhlApp', ['ngRoute', 'nhlControllers', 'nhlServices']);
+var nhlControllers = angular.module('nhlControllers', []);
+var nhlServices = angular.module('nhlServices', []);
+nhlControllers.controller('matchController', ['apiClient', '$q', '$scope', function (apiClient, $q, $scope) {
+    $scope.model = {};
+    $scope.success = false;
+    $scope.showError = false;
+
+    $scope.init = function () {
+        $q.all([apiClient.getAllTeams(), apiClient.getAllPlayers()])
+            .then(function (responses) {
+                $scope.teams = responses[0].content;
+                $scope.model.teamOne = $scope.teams[0];
+                $scope.model.teamTwo = $scope.teams[1];
+
+                $scope.players = responses[1].content;
+
+                $scope.model.playerOne = $scope.players[0];
+                $scope.model.playerTwo = $scope.players[1];
+            })
+            .catch(function (error) {
+                return error;
+            });
+        $scope.model.teamOneScore = 0;
+        $scope.model.teamTwoScore = 0;
+    };
+
+    $scope.addMatch = function () {
+
+        $scope.match = {
+            MatchId: null,
+            PlayerOne: $scope.model.playerOne.PlayerId,
+            PlayerTwo: $scope.model.playerTwo.PlayerId,
+            TeamOne: $scope.model.teamOne.TeamId,
+            TeamTwo: $scope.model.teamTwo.TeamId,
+            PlayerOneScore: $scope.model.teamOneScore,
+            PlayerTwoScore: $scope.model.teamTwoScore
+        };
+
+        apiClient.addMatch($scope.match)
+            .then(function (response) {
+                $scope.success = true;
+                $scope.showError = false;
+            }).catch(function (error) {
+                $scope.showError = true;
+            });
+
+    };
+
+
+    $scope.getLatestMatches = function() {
+        apiClient.getAllMatches()
+            .then(function(response) {
+                $scope.matches = response.content;
+            })
+            .catch(function(error) {
+
+            });
+    }
+}]);
+nhlControllers.controller('playerController', ['apiClient', '$scope', '$routeParams', function (apiClient, $scope, $routeParams) {
+    $scope.getAllPlayers = function () {
+        apiClient.getAllPlayers()
+            .then(function (response) {
+                $scope.players = response.content;
+            })
+            .catch(function (error) {
+            });
+    }
+
+    $scope.init = function () {
+        apiClient.getPlayer($routeParams.playerId)
+            .then(function (response) {
+                $scope.player = response.content;
+            })
+            .catch(function () {
+
+            });
+    };
+}]);
+nhlServices.service('apiClient', ['$http', function ($http) {
+    var baseUrl = 'http://nhlstats.api.local/api';
+
+    this.getAllMatches = function () {
+        return $http.get(baseUrl + '/matches/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllTeams = function () {
+        return $http.get(baseUrl + '/teams/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.getAllPlayers = function () {
+        return $http.get(baseUrl + '/players/getall')
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+    this.getPlayer = function (playerId) {
+        return $http.get(baseUrl + '/players/get', playerId)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    this.addMatch = function (match) {
+        return $http.post(baseUrl + '/matches/add', match)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+}]);
+nhlApp.config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'Views/Home.html'
+            }).
+          when('/add', {
+              templateUrl: 'Views/Match/Add.html'
+          })
+            .when('/statistics/:playerId',
+            {
+                templateUrl: 'Views/Statistics/Player.html'
+            }).otherwise('/');
 
         $locationProvider.html5Mode(true);
     }

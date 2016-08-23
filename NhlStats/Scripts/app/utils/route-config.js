@@ -6,8 +6,11 @@
             }).
           when('/add', {
               templateUrl: 'Views/Match/Add.html'
-          }).
-          otherwise('/');
+          })
+            .when('/statistics/:playerId',
+            {
+                templateUrl: 'Views/Statistics/Player.html'
+            }).otherwise('/');
 
         $locationProvider.html5Mode(true);
     }

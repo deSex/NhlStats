@@ -1,59 +1,66 @@
 ﻿<div class="text-center col-md-12 col-sm-12" ng-controller="matchController" ng-init="init()">
-    <h1>Add new match</h1>
-    <p>Fill out the form below to add a new match to the statistics.</p>
-    <br />
-    <form class="form-horizontal" ng-submit="addMatch()">
+
+    <form class="form-horizontal" ng-submit="addMatch()" ng-show="!success">
+        <h1>Add new match</h1>
+        <p>Fill out the form below to add a new match to the statistics.</p>
+        <br />
         <div class="form-group">
-            <div class="col-md-6 col-sm-2">
+            <div class="col-md-6 col-sm-6">
                 <label for="playerOne">Player 1</label>
                 <select id="playerOne" class="form-control" ng-options="player as player.Name for player in players track by player.PlayerId" ng-model="model.playerOne" type="text"></select>
             </div>
-            <div class="col-md-6 col-sm-2">
+            <div class="col-md-6 col-sm-6">
                 <label for="playerTwo">Player 2</label>
                 <select id="playerTwo" class="form-control" ng-options="player as player.Name for player in players track by player.PlayerId" ng-model="model.playerTwo" type="text"></select>
             </div>
         </div>
         <div class="form-group">
-            <div class="col-md-6 col-sm-2">
+            <div class="col-md-6 col-sm-6">
                 <label for="teamOne-name">Team 1</label>
                 <select id="teamOne-name" class="form-control" ng-options="team as team.Name for team in teams track by team.TeamId" ng-model="model.teamOne" type="text"></select>
             </div>
-            <div class="col-md-6 col-sm-2">
+            <div class="col-md-6 col-sm-6">
                 <label for="teamTwo.name">Team 2</label>
                 <select id="teamTwo.name" class="form-control" ng-options="team as team.Name for team in teams track by team.TeamId" ng-model="model.teamTwo" type="text"></select>
             </div>
 
         </div>
         <div class="form-group">
-            <div class="col-md-6 col-sm-2">
+            <div class="col-md-6 col-sm-6">
                 <label for="teamOne-score">Team 1 score</label>
-                <input id="teamOne-score" class="form-control" ng-model="model.teamOneScore" type="text" />
+                <input id="teamOne-score" class="form-control" ng-model="model.teamOneScore" type="text"/>
             </div>
-            <div class="col-md-6 col-sm-2">
+            <div class="col-md-6 col-sm-6">
                 <label for="teamTwo-score">Team 2 score</label>
-                <input id="teamTwo-score" class="form-control" ng-model="model.teamTwoScore" type="text" />
+                <input id="teamTwo-score" class="form-control" ng-model="model.teamTwoScore" type="text"/>
             </div>
         </div>
         <br/><br/>
 
         <div class="col-md-12 teams">
-            <div class="team col-md-4">
-                <img class="team-logo" src="{{model.teamOne.EmblemUrl}}" />
+            <div class="team col-md-4 col-sm-4">
+                <img class="team-logo" src="{{model.teamOne.EmblemUrl}}"/>
                 <h2>{{model.teamOne.Name}}</h2>
                 <h2>{{model.teamOneScore}}</h2>
                 <h3>{{model.playerOne.Name}}</h3>
             </div>
-            <div class="spacer">
-                <h1>-</h1>
+            <div class="spacer text-center col-md-4 col-sm-4">
+                <h1>VS</h1>
             </div>
-            <div class="team col-md-4">
-                <img class="team-logo" src="{{model.teamTwo.EmblemUrl}}" />
+            <div class="team col-md-4 col-sm-4">
+                <img class="team-logo" src="{{model.teamTwo.EmblemUrl}}"/>
                 <h2>{{model.teamTwo.Name}}</h2>
                 <h2>{{model.teamTwoScore}}</h2>
                 <h3>{{model.playerTwo.Name}}</h3>
             </div>
         </div>
-
-        <button type="submit" class="btn btn-submit">Submit</button>
+        <div class="top-margin">
+            <button type="submit" class="btn btn-submit">Submit</button>
+        </div>
     </form>
+    <div ng-show="success">
+        <h2>Successfully added a match!</h2>
+        <p>Press the button below to add another match.</p>
+        <button type="button" class="btn btn-submit" ng-click="success = false">Add another match</button>
+    </div>
 </div>

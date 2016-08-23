@@ -1,4 +1,4 @@
-/*!2016-08-18 *//*!
+/*!2016-08-23 *//*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -6760,6 +6760,12 @@ button.close {
   font-family: 'NHL';
   src: url("/Styles/Fonts/NHL.ttf") format("truetype"); }
 
+ul li {
+  list-style-type: none; }
+
+h2 {
+  margin: 2em 0 2em 0; }
+
 .navbar-inverse .navbar-brand {
   color: #ccc;
   font-family: NHL;
@@ -6794,6 +6800,12 @@ button.close {
   margin-top: 150px;
   padding-bottom: 50px; }
 
+.top-margin {
+  margin-top: 30%; }
+
+.bottom-margin {
+  margin-bottom: 30%; }
+
 @media (max-width: 767px) {
   .navbar-brand {
     margin-top: -5px; }
@@ -6810,16 +6822,26 @@ form .team-logo {
   max-width: 200px; }
 
 form .spacer {
-  float: left;
-  display: inline-block;
-  margin-top: 150px; }
+  display: inline-block; }
 
 form .teams {
   overflow: hidden;
   margin: 0 auto; }
 
 form .team {
-  display: inline-block;
-  float: left; }
-  form .team:first-of-type {
-    margin-left: 16%; }
+  display: inline-block; }
+
+.match-table th, .match-table td {
+  padding: 1% 0 1% 1%;
+  width: 20em;
+  text-align: center;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.5); }
+
+.match-table td img {
+  max-width: 25px;
+  max-height: 25px; }
+
+.player-stats h1 {
+  font-family: NHL;
+  font-size: 9em;
+  width: 120%; }

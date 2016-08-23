@@ -212,6 +212,7 @@
     <Content Include="Scripts\app\app-bundle.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\components\match\match-controller.js" />
+    <Content Include="Scripts\app\components\player\player-controller.js" />
     <Content Include="Scripts\app\utils\api-client.js" />
     <Content Include="Scripts\app\utils\route-config.js" />
     <Content Include="Scripts\script-bundle.js" />
@@ -253,6 +254,7 @@
     <Content Include="Styles\styles-bundle.min.css" />
     <Content Include="Views\Home.html" />
     <Content Include="Views\Match\Add.html" />
+    <Content Include="Views\Statistics\Player.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -442,6 +444,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Styles\SASS\Match\match.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\SASS\Statistics\Statistics.scss" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -18,6 +18,11 @@
 			.then(function (response) { return response.data })
 			.catch(function (error) { return error });
     };
+    this.getPlayer = function (playerId) {
+        return $http.get(baseUrl + '/players/get/' + playerId)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
 
     this.addMatch = function (match) {
         return $http.post(baseUrl + '/matches/add', match)

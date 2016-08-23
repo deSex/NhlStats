@@ -11,6 +11,11 @@ namespace NhlStats.Api
         {
             // Web API configuration and services
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+
+            config.Formatters.JsonFormatter
+                        .SerializerSettings
+                        .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
             var cors = new EnableCorsAttribute(ConfigurationManager.AppSettings["AllowedCorsUrl"], "*", "*");
             config.EnableCors(cors);
 
@@ -20,7 +25,7 @@ namespace NhlStats.Api
             config.Routes.MapHttpRoute(
                 "DefaultApi",
                 "api/{controller}/{id}",
-                new {id = RouteParameter.Optional}
+                new { id = RouteParameter.Optional }
                 );
         }
     }

@@ -110,7 +110,7 @@
     <Compile Include="Context\NhlContext.cs" />
     <Compile Include="Entities\Player.cs" />
     <Compile Include="Entities\Team.cs" />
-    <Compile Include="Controllers\MatchApiController.cs" />
+    <Compile Include="Controllers\MatchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
