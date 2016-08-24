@@ -1,17 +1,29 @@
 ﻿nhlServices.service('apiClient', ['$http', function ($http) {
     var baseUrl = 'http://nhlstats.api.local/api';
 
+    // Matches
+
     this.getAllMatches = function () {
         return $http.get(baseUrl + '/matches/getall')
 			.then(function (response) { return response.data })
 			.catch(function (error) { return error });
     };
 
+    this.addMatch = function (match) {
+        return $http.post(baseUrl + '/matches/add', match)
+			.then(function (response) { return response.data })
+			.catch(function (error) { return error });
+    };
+
+    // Teams
+
     this.getAllTeams = function () {
         return $http.get(baseUrl + '/teams/getall')
 			.then(function (response) { return response.data })
 			.catch(function (error) { return error });
     };
+
+    // Players
 
     this.getAllPlayers = function () {
         return $http.get(baseUrl + '/players/getall')
@@ -23,9 +35,8 @@
 			.then(function (response) { return response.data })
 			.catch(function (error) { return error });
     };
-
-    this.addMatch = function (match) {
-        return $http.post(baseUrl + '/matches/add', match)
+    this.addPlayer = function (player) {
+        return $http.post(baseUrl + '/players/add/', player)
 			.then(function (response) { return response.data })
 			.catch(function (error) { return error });
     };

@@ -1,4 +1,4 @@
-/*!2016-08-23 *//*!
+/*!2016-08-24 *//*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -6760,6 +6760,24 @@ button.close {
   font-family: 'NHL';
   src: url("/Styles/Fonts/NHL.ttf") format("truetype"); }
 
+* {
+  margin: 0; }
+
+html, body {
+  height: 100%; }
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  /* This line and the next line are not necessary unless you need IE6 support */
+  height: 100%;
+  margin: 0 auto -50px;
+  /* the bottom margin is the negative value of the footer's height */ }
+
+.footer, .push {
+  height: 50px;
+  /* .push must be the same height as .footer */ }
+
 ul li {
   list-style-type: none; }
 
@@ -6784,7 +6802,7 @@ h2 {
   color: #ff7d00; }
 
 .btn-submit {
-  color: #9d9d9d;
+  color: #ccc;
   background-color: black; }
   .btn-submit:hover {
     color: white;
@@ -6845,3 +6863,21 @@ form .team {
   font-family: NHL;
   font-size: 9em;
   width: 120%; }
+
+@media (max-width: 750px) {
+  .player-stats h1 {
+    font-size: 8em; } }
+
+@media (max-width: 665px) {
+  .player-stats h1 {
+    font-size: 6em; } }
+
+@media (max-width: 500px) {
+  .player-stats h1 {
+    font-size: 4em; } }
+
+.player-form {
+  margin-top: 13.5%; }
+
+.add-player {
+  margin-top: 13.5%; }

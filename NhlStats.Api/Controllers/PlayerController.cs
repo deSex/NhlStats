@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using NhlStats.Api.Context;
+using NhlStats.Api.Entities;
 
 namespace NhlStats.Api.Controllers
 {
@@ -59,6 +60,22 @@ namespace NhlStats.Api.Controllers
                 player.Matches = matches;
 
                 return Request.CreateResponse(HttpStatusCode.OK, new { content = player });
+            }
+        }
+
+        [HttpPost]
+        [Route("api/players/add")]
+        public HttpResponseMessage Post([FromBody] Player player)
+        {
+            if (player == null)
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, new {message = "Bad Request: Player cannot be null."});
+            }
+            using (var db = new NhlContext())
+            {
+                db.Players.Add(player);
+                db.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.OK, new { message = "OK: Player successfully added." });
             }
         }
     }

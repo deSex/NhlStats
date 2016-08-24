@@ -8,40 +8,43 @@
     <link href="Styles/styles-bundle.css" rel="stylesheet" />
 </head>
 <body ng-app="nhlApp">
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a href="/" class="navbar-brand">
-                    <img src="/Styles/Images/nhl-logo.png" />
-                    <p>STATS</p>
-                </a>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+    <div class="wrapper">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">
+                        <img src="/Styles/Images/nhl-logo.png" />
+                        <p>STATS</p>
+                    </a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="navbar-btn"><a href="/add">Add match</a></li>
-                    <li class="navbar-btn"><a href="/stats">Statistics</a></li>
-                    <li class="navbar-btn"><a href="/addPlayer">Add player</a></li>
-                </ul>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="navbar-btn"><a href="/match/add">Add match</a></li>
+                        <li class="navbar-btn"><a href="/stats">Statistics</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        <div ng-view>
+        <div class="container body-content">
+            <div ng-view>
+
+            </div>
+
 
         </div>
-
-        <footer class="text-center navbar-fixed-bottom">
-            <hr />
-            <p>&copy; 2016 - Ludvig Flemmich</p>
-        </footer>
+        <div class="push"></div>
     </div>
-<script src="Scripts/script-bundle.js"></script>
+    <footer class="text-center footer">
+        <hr />
+        <p>&copy; 2016 - Ludvig Flemmich</p>
+    </footer>
+    <script src="Scripts/script-bundle.js"></script>
     <script src="Scripts/app/app.js"></script>
     <script src="Scripts/app/utils/api-client.js"></script>
     <script src="Scripts/app/utils/route-config.js"></script>
