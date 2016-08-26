@@ -47,11 +47,6 @@ namespace NhlStats.Api.Controllers
                     playerTwo.Wins = playerTwo.Wins + 1;
                     playerOne.Losses = playerOne.Losses + 1;
                 }
-                else if (match.PlayerOneScore == match.PlayerTwoScore)
-                {
-                    playerOne.Ties = playerOne.Ties + 1;
-                    playerTwo.Ties = playerTwo.Ties + 1;
-                }
 
                 playerOne.Goals += match.PlayerOneScore;
                 playerTwo.Goals += match.PlayerTwoScore;

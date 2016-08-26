@@ -1,7 +1,14 @@
-﻿.player-form{
+﻿.player-form {
     margin-top: 13.5%;
 }
 
-.add-player{
+.add-player {
     margin-top: 13.5%;
+
+    .input-group {
+
+        a {
+            height: 34px;
+        }
+    }
 }

@@ -23,8 +23,6 @@ namespace NhlStats.Api.Entities
 
         public int Losses { get; set; }
 
-        public int Ties { get; set; }
-
         public int Goals { get; set; }
 
 

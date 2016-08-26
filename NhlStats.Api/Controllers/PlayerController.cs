@@ -36,9 +36,9 @@ namespace NhlStats.Api.Controllers
             int id;
             int.TryParse(playerId, out id);
 
-            if (id == null)
+            if (id <= 0)
             {
-                return Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = "Bad Request: Failed to parse PlayerId." });
+                return Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = "Bad Request: Invalid PlayerId." });
             }
 
             using (var db = new NhlContext())

@@ -123,3 +123,5 @@ form .team {
 
 .add-player {
   margin-top: 13.5%; }
+  .add-player .input-group a {
+    height: 34px; }

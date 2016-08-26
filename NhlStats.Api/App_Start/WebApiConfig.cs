@@ -27,6 +27,7 @@ namespace NhlStats.Api
                 "api/{controller}/{id}",
                 new { id = RouteParameter.Optional }
                 );
+
         }
     }
 }

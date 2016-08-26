@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="esattonhlstats" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Projects\\NhlStats\\NhlStats\.Api\\obj\\Debug\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Projects\\NhlStats\\NhlStats\.Api\\obj\\Debug\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="NhlContext-Web.config Connection String" description="" value="data source=LUDVIGESATTO\EXPRESS08R2;initial catalog=NhlStats;integrated security=False;user id=NhlStatsUser;password=nepi11!;multipleactiveresultsets=True;application name=EntityFramework;App=EntityFramework" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Projects\\NhlStats\\NhlStats\.Api\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='NhlContext']/@connectionString" />
+  </parameter>
+</parameters>

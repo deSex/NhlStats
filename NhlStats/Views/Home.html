@@ -26,9 +26,12 @@
             <a href="#" class="add-player" ng-click="addNewPlayer = true" ng-hide="addNewPlayer">Add new player</a>
             <form class="form-horizontal" name="playerForm" ng-submit="addPlayer()" ng-show="!success" ng-hide="!addNewPlayer">
                 <div class="input-group">
-                    <input id="name" class="form-control" placeholder="Player name" ng-model="newPlayer.Name" type="text"/>
+                    <input id="name" class="form-control" placeholder="Player name" ng-model="newPlayer.Name" type="text" />
                     <span class="input-group-btn">
                         <button type="submit" class="btn btn-submit">Add player</button>
+                    </span>
+                    <span class="input-group-btn">
+                        <a href="#" class="btn btn-link" ng-click="addNewPlayer = false">Cancel</a>
                     </span>
                 </div>
             </form>

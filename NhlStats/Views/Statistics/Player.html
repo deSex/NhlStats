@@ -8,13 +8,12 @@
         <div class="col-md-3">
             <h3>Losses: {{player.Losses}} ({{((player.Losses / (player.Wins + player.Losses))*100).toFixed(2)}}%)</h3>
         </div>
-        <div class="col-md-3">
-            <h3>Ties: {{player.Ties}}</h3>
+        <div class="col-md-2">
+            <h3>Goals: {{player.Goals}}</h3>
         </div>
         <div class="col-md-3">
-            <h3>Goals: {{player.Goals}}</h3>
+            <h3>Average GPM: {{((player.Goals / (player.Wins + player.Losses))).toFixed(2)}}</h3>
         </div>
     </div>
     <br />
-    <h2 class="top-margin">Opponents</h2>
 </div> 

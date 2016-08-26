@@ -1,4 +1,5 @@
-﻿module.exports = function (grunt) {
+﻿/// <binding ProjectOpened='default' />
+module.exports = function (grunt) {
 
     var scriptsToBundle = ['node_modules/angular/angular.js', 'node_modules/angular-route/angular-route.js', 'node_modules/jquery/jquery.js', 'node_modules/bootstrap/dist/js/bootstrap.js'];
     var appScriptsToBundle = ['Scripts/app/**/*.js'];
