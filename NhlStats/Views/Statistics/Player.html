@@ -1,19 +1,46 @@
-﻿<div ng-controller="playerController" ng-init="getPlayer()" class="player-stats">
-    <h1 class="col-md-12">{{player.Name | uppercase}}</h1>
-    <div class="col-md-12 ">
-        <div class="col-md-3">
-            <h3>Wins: {{player.Wins}} ({{((player.Wins / (player.Wins + player.Losses))*100).toFixed(2)}}%)</h3>
-            <p></p>
-        </div>
-        <div class="col-md-3">
-            <h3>Losses: {{player.Losses}} ({{((player.Losses / (player.Wins + player.Losses))*100).toFixed(2)}}%)</h3>
-        </div>
-        <div class="col-md-2">
-            <h3>Goals: {{player.Goals}}</h3>
-        </div>
-        <div class="col-md-3">
-            <h3>Average GPM: {{((player.Goals / (player.Wins + player.Losses))).toFixed(2)}}</h3>
+﻿<div>
+    <div ng-controller="playerController" ng-init="getPlayer()" class="player-stats">
+        <h1 class="col-md-12">{{player.Name | uppercase}}</h1>
+        <div class="col-md-12 ">
+            <div class="col-md-3">
+                <h3>Wins: {{player.Wins}} ({{((player.Wins / (player.Wins + player.Losses))*100).toFixed(2)}}%)</h3>
+                <p></p>
+            </div>
+            <div class="col-md-3">
+                <h3>Losses: {{player.Losses}} ({{((player.Losses / (player.Wins + player.Losses))*100).toFixed(2)}}%)</h3>
+            </div>
+            <div class="col-md-2">
+                <h3>Goals: {{player.Goals}}</h3>
+            </div>
+            <div class="col-md-3">
+                <h3>Average GPM: {{((player.Goals / (player.Wins + player.Losses))).toFixed(2)}}</h3>
+            </div>
         </div>
     </div>
-    <br />
-</div> 
+
+    <div ng-controller="matchController">
+        <table class="match-table" ng-init="getPlayerMatches()">
+            <tr>
+                <th>Player One</th>
+                <th>Team One</th>
+                <th>Result</th>
+                <th>Team Two</th>
+                <th>Player Two</th>
+            </tr>
+            <tr ng-repeat="match in matches | limitTo: 10">
+                <td><a href="/statistics/{{match.Player.PlayerId}}">{{match.Player.Name}}</a></td>
+                <td><img src="{{match.Team.EmblemUrl}}"/>{{match.Team.Name}}</td>
+                <td>{{match.PlayerOneScore}} - {{match.PlayerTwoScore}}</td>
+                <td><img src="{{match.Team1.EmblemUrl}}"/>{{match.Team1.Name}}</td>
+                <td><a href="/statistics/{{match.Player1.PlayerId}}">{{match.Player1.Name}}</a></td>
+            </tr>
+            <tr class="no-border" ng-if="matches.count > 10">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a href="#">Show more</a></td>
+            </tr>
+        </table>
+    </div>
+</div>

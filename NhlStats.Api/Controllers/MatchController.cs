@@ -17,7 +17,7 @@ namespace NhlStats.Api.Controllers
         {
             if (match == null)
             {
-                return Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = "Bad request: Match cannot be null."});
+                return Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = "Bad request: Match cannot be null." });
             }
             using (var db = new NhlContext())
             {
@@ -64,6 +64,54 @@ namespace NhlStats.Api.Controllers
             using (var db = new NhlContext())
             {
                 var query = (from b in db.Matches
+                             select b).OrderByDescending(x => x.MatchId);
+
+                foreach (var match in query)
+                {
+                    match.Player = db.Players.SingleOrDefault(b => b.PlayerId == match.PlayerOne);
+                    match.Player.Matches = null;
+                    match.Player.Matches1 = null;
+
+                    match.Player1 = db.Players.SingleOrDefault(b => b.PlayerId == match.PlayerTwo);
+                    match.Player1.Matches = null;
+                    match.Player1.Matches1 = null;
+
+                    match.Team = db.Teams.SingleOrDefault(b => b.TeamId == match.TeamOne);
+                    match.Team.Matches = null;
+                    match.Team.Matches1 = null;
+
+                    match.Team1 = db.Teams.SingleOrDefault(b => b.TeamId == match.TeamTwo);
+                    match.Team1.Matches = null;
+                    match.Team1.Matches1 = null;
+                }
+
+                var matches = query.OrderByDescending(x => x.MatchId).ToList();
+
+                if (matches == null || matches.Count == 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.ExpectationFailed, new { Message = "Expecation failed: There are no saved matches." });
+                }
+
+                return Request.CreateResponse(HttpStatusCode.OK, new { content = matches });
+            }
+        }
+
+        [HttpGet]
+        [Route("api/matches/getAllByPlayerId/{playerId}")]
+        public HttpResponseMessage GetAllByPlayerId(string playerId)
+        {
+
+            int id;
+            if (int.TryParse(playerId, out id))
+            {
+                Request.CreateResponse(HttpStatusCode.BadRequest,
+                    new { message = "Bad Request: Could not parse PlayerId." });
+            }
+
+            using (var db = new NhlContext())
+            {
+                var query = (from b in db.Matches
+                             where b.Player.PlayerId == id || b.Player1.PlayerId == id
                              select b).OrderByDescending(x => x.MatchId);
 
                 foreach (var match in query)

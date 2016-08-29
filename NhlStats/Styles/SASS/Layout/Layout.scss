@@ -91,6 +91,18 @@ h2{
     margin-bottom: 30%;
 }
 
+.stack-top{
+    margin-top: 2%;
+}
+
+.no-border{
+   border: none !important;
+
+   td{
+       border: none !important;
+   }
+}
+
 @media(max-width: 767px) {
     .navbar-brand {
         margin-top: -5px;

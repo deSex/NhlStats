@@ -1,4 +1,4 @@
-/*!2016-08-26 *//*!
+/*!2016-08-29 *//*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -6824,6 +6824,14 @@ h2 {
 .bottom-margin {
   margin-bottom: 30%; }
 
+.stack-top {
+  margin-top: 2%; }
+
+.no-border {
+  border: none !important; }
+  .no-border td {
+    border: none !important; }
+
 @media (max-width: 767px) {
   .navbar-brand {
     margin-top: -5px; }
@@ -6859,10 +6867,12 @@ form .team {
   max-width: 25px;
   max-height: 25px; }
 
-.player-stats h1 {
-  font-family: NHL;
-  font-size: 9em;
-  width: 120%; }
+.player-stats {
+  height: 300px; }
+  .player-stats h1 {
+    font-family: NHL;
+    font-size: 9em;
+    width: 120%; }
 
 @media (max-width: 750px) {
   .player-stats h1 {

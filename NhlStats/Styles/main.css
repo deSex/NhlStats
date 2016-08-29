@@ -66,6 +66,14 @@ h2 {
 .bottom-margin {
   margin-bottom: 30%; }
 
+.stack-top {
+  margin-top: 2%; }
+
+.no-border {
+  border: none !important; }
+  .no-border td {
+    border: none !important; }
+
 @media (max-width: 767px) {
   .navbar-brand {
     margin-top: -5px; }
@@ -101,10 +109,12 @@ form .team {
   max-width: 25px;
   max-height: 25px; }
 
-.player-stats h1 {
-  font-family: NHL;
-  font-size: 9em;
-  width: 120%; }
+.player-stats {
+  height: 300px; }
+  .player-stats h1 {
+    font-family: NHL;
+    font-size: 9em;
+    width: 120%; }
 
 @media (max-width: 750px) {
   .player-stats h1 {

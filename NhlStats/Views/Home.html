@@ -1,5 +1,5 @@
 ﻿<h2>Latest matches</h2>
-<table class="match-table" ng-controller="matchController" ng-init="getLatestMatches()">
+<table class="match-table" ng-controller="matchController" ng-init="getAllMatches()">
     <tr>
         <th>Player One</th>
         <th>Team One</th>
@@ -8,11 +8,11 @@
         <th>Player Two</th>
     </tr>
     <tr ng-repeat="match in matches | limitTo: 10">
-        <td>{{match.Player.Name}}</td>
+        <td><a href="/statistics/{{match.Player.PlayerId}}">{{match.Player.Name}}</a></td>
         <td><img src="{{match.Team.EmblemUrl}}" />{{match.Team.Name}}</td>
         <td>{{match.PlayerOneScore}} - {{match.PlayerTwoScore}}</td>
         <td><img src="{{match.Team1.EmblemUrl}}" />{{match.Team1.Name}}</td>
-        <td>{{match.Player1.Name}}</td>
+        <td><a href="/statistics/{{match.Player1.PlayerId}}">{{match.Player1.Name}}</a></td>
     </tr>
 </table>
 <div class="col-md-12 col-sm-12" ng-controller="playerController" ng-init="init()">
