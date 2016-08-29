@@ -27,19 +27,19 @@
                 <th>Team Two</th>
                 <th>Player Two</th>
             </tr>
-            <tr ng-repeat="match in matches | limitTo: 10">
+            <tr ng-repeat="match in matches | limitTo: matchesToShow">
                 <td><a href="/statistics/{{match.Player.PlayerId}}">{{match.Player.Name}}</a></td>
                 <td><img src="{{match.Team.EmblemUrl}}"/>{{match.Team.Name}}</td>
                 <td>{{match.PlayerOneScore}} - {{match.PlayerTwoScore}}</td>
                 <td><img src="{{match.Team1.EmblemUrl}}"/>{{match.Team1.Name}}</td>
                 <td><a href="/statistics/{{match.Player1.PlayerId}}">{{match.Player1.Name}}</a></td>
             </tr>
-            <tr class="no-border" ng-if="matches.count > 10">
+            <tr class="no-border" ng-if="matches.length > matchesToShow">
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><a href="#">Show more</a></td>
+                <td><a href="#" ng-click="showMoreMatches()">Show more</a></td>
             </tr>
         </table>
     </div>

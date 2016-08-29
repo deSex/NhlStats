@@ -1,8 +1,9 @@
-﻿nhlControllers.controller('matchController', ['apiClient', '$q', '$scope','$routeParams', function (apiClient, $q, $scope, $routeParams) {
+﻿nhlControllers.controller('matchController', ['apiClient', '$q', '$scope', '$routeParams', function (apiClient, $q, $scope, $routeParams) {
     $scope.model = {};
     $scope.success = false;
     $scope.showError = false;
     $scope.playerId = $routeParams.playerId;
+    $scope.matchesToShow = 10;
 
     $scope.init = function () {
         $q.all([apiClient.getAllTeams(), apiClient.getAllPlayers()])
@@ -46,12 +47,12 @@
     };
 
 
-    $scope.getAllMatches = function() {
+    $scope.getAllMatches = function () {
         apiClient.getAllMatches()
-            .then(function(response) {
+            .then(function (response) {
                 $scope.matches = response.content;
             })
-            .catch(function(error) {
+            .catch(function (error) {
 
             });
     }
@@ -65,4 +66,8 @@
 
             });
     }
+
+    $scope.showMoreMatches = function () {
+        $scope.matchesToShow += 10;
+    };
 }]);
