@@ -6842,10 +6842,9 @@ form label {
   margin: 5px 0 5px 0; }
 
 form .team-logo {
-  min-height: 100px;
+  height: 100px;
   min-width: 100px;
-  max-height: 200px;
-  max-width: 200px; }
+  max-width: 250px; }
 
 form .spacer {
   display: inline-block; }

@@ -28,32 +28,40 @@
         <div class="form-group">
             <div class="col-md-6 col-sm-6">
                 <label for="teamOne-score">Team 1 score</label>
-                <input id="teamOne-score" class="form-control" ng-model="model.teamOneScore" type="text"/>
+                <input id="teamOne-score" class="form-control" ng-model="model.teamOneScore" type="text" />
             </div>
             <div class="col-md-6 col-sm-6">
                 <label for="teamTwo-score">Team 2 score</label>
-                <input id="teamTwo-score" class="form-control" ng-model="model.teamTwoScore" type="text"/>
+                <input id="teamTwo-score" class="form-control" ng-model="model.teamTwoScore" type="text" />
             </div>
         </div>
-        <br/><br/>
+        <br /><br />
 
-        <div class="col-md-12 teams">
-            <div class="team col-md-4 col-sm-4">
-                <img class="team-logo" src="{{model.teamOne.EmblemUrl}}"/>
-                <h2>{{model.teamOne.Name}}</h2>
-                <h2>{{model.teamOneScore}}</h2>
-                <h3>{{model.playerOne.Name}}</h3>
-            </div>
-            <div class="spacer text-center col-md-4 col-sm-4">
-                <h1>VS</h1>
-            </div>
-            <div class="team col-md-4 col-sm-4">
-                <img class="team-logo" src="{{model.teamTwo.EmblemUrl}}"/>
-                <h2>{{model.teamTwo.Name}}</h2>
-                <h2>{{model.teamTwoScore}}</h2>
-                <h3>{{model.playerTwo.Name}}</h3>
-            </div>
-        </div>
+        <table class="col-md-12 col-sm-12 teams">
+            <tr>
+                <td class="col-md-4 col-sm-4 ">
+                    <div class="team">
+                        <img class="team-logo" src="{{model.teamOne.EmblemUrl}}" />
+                        <h3>{{model.teamOne.Name}}</h3>
+                        <h3>{{model.teamOneScore}}</h3>
+                        <h3>{{model.playerOne.Name}}</h3>
+                    </div>
+                </td>
+                <td class="col-md-2 col-sm-2">
+                    <div class="spacer">
+                        <h2>VS</h2>
+                    </div>
+                </td>
+                <td class="col-md-4 col-sm-4">
+                    <div class="team">
+                        <img class="team-logo" src="{{model.teamTwo.EmblemUrl}}" />
+                        <h3>{{model.teamTwo.Name}}</h3>
+                        <h3>{{model.teamTwoScore}}</h3>
+                        <h3>{{model.playerTwo.Name}}</h3>
+                    </div>
+                </td>
+            </tr>
+        </table>
         <div class="top-margin">
             <button type="submit" class="btn btn-submit">Submit</button>
         </div>
