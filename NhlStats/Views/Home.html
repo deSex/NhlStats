@@ -67,10 +67,12 @@
                 <tr>
                     <th><button ng-click="selectedFilter = filters[0]; selectedFilter.reverse = !selectedFilter.reverse">Name</button></th>
                     <th><button ng-click="selectedFilter = filters[1]; selectedFilter.reverse = !selectedFilter.reverse">Matches</button></th>
-                    <th><button ng-click="selectedFilter = filters[2]; selectedFilter.reverse = !selectedFilter.reverse">Win ratio</button></th>
-                    <th><button ng-click="selectedFilter = filters[3]; selectedFilter.reverse = !selectedFilter.reverse">Loss ratio</button></th>
-                    <th><button ng-click="selectedFilter = filters[4]; selectedFilter.reverse = !selectedFilter.reverse">Goals</button></th>
-                    <th><button ng-click="selectedFilter = filters[5]; selectedFilter.reverse = !selectedFilter.reverse">GPM</button></th>
+                    <th><button ng-click="selectedFilter = filters[2]; selectedFilter.reverse = !selectedFilter.reverse">Wins</button></th>
+                    <th><button ng-click="selectedFilter = filters[3]; selectedFilter.reverse = !selectedFilter.reverse">Losses</button></th>
+                    <th><button ng-click="selectedFilter = filters[4]; selectedFilter.reverse = !selectedFilter.reverse">Win ratio</button></th>
+                    <th><button ng-click="selectedFilter = filters[5]; selectedFilter.reverse = !selectedFilter.reverse">Loss ratio</button></th>
+                    <th><button ng-click="selectedFilter = filters[6]; selectedFilter.reverse = !selectedFilter.reverse">Goals</button></th>
+                    <th><button ng-click="selectedFilter = filters[7]; selectedFilter.reverse = !selectedFilter.reverse">GPM</button></th>
                 </tr>
                 <tr ng-repeat="player in players | limitTo: 5 | orderBy: selectedFilter.filterType : selectedFilter.reverse">
                     <td>
@@ -80,10 +82,16 @@
                         {{player.totalMatches}}
                     </td>
                     <td>
-                        {{player.Wins}} ({{((player.Wins / (player.Wins + player.Losses))*100).toFixed(2)}}%)
+                        {{player.Wins}}
                     </td>
                     <td>
-                        {{player.Losses}} ({{((player.Losses / (player.Wins + player.Losses))*100).toFixed(2)}}%)
+                        {{player.Losses}}
+                    </td>
+                    <td>
+                        {{((player.Wins / (player.Wins + player.Losses))*100).toFixed(2)}}%
+                    </td>
+                    <td>
+                        {{((player.Losses / (player.Wins + player.Losses))*100).toFixed(2)}}%
                     </td>
                     <td>
                         {{player.Goals}}
@@ -91,6 +99,20 @@
                     <td>
                         {{((player.Goals / (player.Wins + player.Losses))).toFixed(2)}}
                     </td>
+                </tr>
+                <tr class="no-border" ng-if="players.length > playersToShow">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="#" ng-click="showMorePlayers()">Show more</a></td>
+                </tr>
+                <tr class="no-border" ng-if="players.length < playersToShow">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="#" ng-click="showLessPlayers()">Show less</a></td>
                 </tr>
             </table>
         </div>
