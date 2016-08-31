@@ -37,9 +37,9 @@
                 <p>Click a player for more statistics</p><br />
             </div>
 
-            <div class="col-md-5 col-sm-5 player-form">
-                <a href="#" class="add-player" ng-click="addNewPlayer = true" ng-hide="addNewPlayer">Add new player</a>
-                <form class="form-horizontal" name="playerForm" ng-submit="addPlayer()" ng-show="!success" ng-hide="!addNewPlayer">
+            <div class="col-md-5 col-sm-5 add-player">
+                <a href="#" ng-click="addNewPlayer = true" ng-hide="addNewPlayer">Add new player</a>
+                <form class="form-horizontal player-form" name="playerForm" ng-submit="addPlayer()" ng-show="!success" ng-hide="!addNewPlayer">
                     <div class="input-group">
                         <input id="name" class="form-control" placeholder="Player name" ng-model="newPlayer.Name" type="text" />
                         <span class="input-group-btn">
