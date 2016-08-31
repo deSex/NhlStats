@@ -12,3 +12,22 @@
         }
     }
 }
+
+.player-table {
+    tr {
+        th{
+            button{
+                background-color: none;
+                background: none;
+                border: none;
+                text-decoration:underline;
+                margin: 0;
+                padding: 0;
+                text-align: left;
+            }
+        }
+        td {
+            width: 200px;
+        }
+    }
+}

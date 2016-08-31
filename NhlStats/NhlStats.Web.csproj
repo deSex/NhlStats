@@ -379,6 +379,8 @@
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\components\match\match-controller.js" />
     <Content Include="Scripts\app\components\player\player-controller.js" />
+    <Content Include="Scripts\app\components\start\start-controller.js" />
+    <Content Include="Scripts\app\components\team\team-controller.js" />
     <Content Include="Scripts\app\utils\api-client.js" />
     <Content Include="Scripts\app\utils\route-config.js" />
     <Content Include="Scripts\script-bundle.js" />
@@ -743,6 +745,7 @@
     <Content Include="node_modules\grunt-contrib-cssmin\README.md" />
     <None Include="Properties\PublishProfiles\esattonhlstats %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\esattonhlstats.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

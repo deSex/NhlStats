@@ -51,6 +51,9 @@
         apiClient.getAllMatches()
             .then(function (response) {
                 $scope.matches = response.content;
+                if ($scope.matchesToShow > $scope.matches.length) {
+                    $scope.matchesToShow = $scope.matches.length;
+                }
             })
             .catch(function (error) {
 
@@ -61,6 +64,9 @@
         apiClient.getPlayerMatches($scope.playerId)
             .then(function (response) {
                 $scope.matches = response.content;
+                if ($scope.matchesToShow > $scope.matches.length) {
+                    $scope.matchesToShow = $scope.matches.length;
+                }
             })
             .catch(function (error) {
 
@@ -69,5 +75,9 @@
 
     $scope.showMoreMatches = function () {
         $scope.matchesToShow += 10;
+    };
+
+    $scope.showLessMatches = function () {
+        $scope.matchesToShow -= 10;
     };
 }]);

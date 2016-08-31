@@ -41,6 +41,13 @@
                 <td></td>
                 <td><a href="#" ng-click="showMoreMatches()">Show more</a></td>
             </tr>
+            <tr class="no-border" ng-if="matches.length < matchesToShow">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a href="#" ng-click="showLessMatches()">Show less</a></td>
+            </tr>
         </table>
     </div>
 </div>

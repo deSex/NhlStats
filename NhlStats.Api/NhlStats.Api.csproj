@@ -120,6 +120,7 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\esattonhlstats %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\esattonhlstats.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

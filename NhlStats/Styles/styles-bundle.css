@@ -1,4 +1,4 @@
-/*!2016-08-29 *//*!
+/*!2016-08-31 *//*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -6893,3 +6893,15 @@ form .team {
   margin-top: 13.5%; }
   .add-player .input-group a {
     height: 34px; }
+
+.player-table tr th button {
+  background-color: none;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  margin: 0;
+  padding: 0;
+  text-align: left; }
+
+.player-table tr td {
+  width: 200px; }

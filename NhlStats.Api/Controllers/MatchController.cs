@@ -87,7 +87,7 @@ namespace NhlStats.Api.Controllers
 
                 var matches = query.OrderByDescending(x => x.MatchId).ToList();
 
-                if (matches == null || matches.Count == 0)
+                if (matches.Count == 0)
                 {
                     return Request.CreateResponse(HttpStatusCode.ExpectationFailed, new { Message = "Expecation failed: There are no saved matches." });
                 }

@@ -1,52 +1,98 @@
-﻿<h2>Latest matches</h2>
-<table class="match-table" ng-controller="matchController" ng-init="getAllMatches()">
-    <tr>
-        <th>Player One</th>
-        <th>Team One</th>
-        <th>Result</th>
-        <th>Team Two</th>
-        <th>Player Two</th>
-    </tr>
-    <tr ng-repeat="match in matches | limitTo: 10">
-        <td><a href="/statistics/{{match.Player.PlayerId}}">{{match.Player.Name}}</a></td>
-        <td><img src="{{match.Team.EmblemUrl}}" />{{match.Team.Name}}</td>
-        <td>{{match.PlayerOneScore}} - {{match.PlayerTwoScore}}</td>
-        <td><img src="{{match.Team1.EmblemUrl}}" />{{match.Team1.Name}}</td>
-        <td><a href="/statistics/{{match.Player1.PlayerId}}">{{match.Player1.Name}}</a></td>
-    </tr>
-</table>
-<div class="col-md-12 col-sm-12" ng-controller="playerController" ng-init="init()">
-    <div class="row">
-        <div class="col-md-3 col-sm-3">
-            <h2>Players</h2>
-            <p>Click a player for more statistics</p><br />
-        </div>
+﻿<div ng-controller="startController" ng-init="init()">
+    <h2>Latest matches</h2>
+    <table class="match-table">
+        <tr>
+            <th>Player One</th>
+            <th>Team One</th>
+            <th>Result</th>
+            <th>Team Two</th>
+            <th>Player Two</th>
+        </tr>
+        <tr ng-repeat="match in matches | limitTo: matchesToShow">
+            <td><a href="/statistics/{{match.Player.PlayerId}}">{{match.Player.Name}}</a></td>
+            <td><img src="{{match.Team.EmblemUrl}}" />{{match.Team.Name}}</td>
+            <td>{{match.PlayerOneScore}} - {{match.PlayerTwoScore}}</td>
+            <td><img src="{{match.Team1.EmblemUrl}}" />{{match.Team1.Name}}</td>
+            <td><a href="/statistics/{{match.Player1.PlayerId}}">{{match.Player1.Name}}</a></td>
+        </tr>
+        <tr class="no-border" ng-if="matches.length > matchesToShow">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a href="#" ng-click="showMoreMatches()">Show more</a></td>
+        </tr>
+        <tr class="no-border" ng-if="matches.length < matchesToShow">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a href="#" ng-click="showLessMatches()">Show less</a></td>
+        </tr>
+    </table>
+    <div class="col-md-12 col-sm-12">
+        <div class="row">
+            <div class="col-md-3 col-sm-3">
+                <h2>Players</h2>
+                <p>Click a player for more statistics</p><br />
+            </div>
 
-        <div class="col-md-5 col-sm-5 player-form">
-            <a href="#" class="add-player" ng-click="addNewPlayer = true" ng-hide="addNewPlayer">Add new player</a>
-            <form class="form-horizontal" name="playerForm" ng-submit="addPlayer()" ng-show="!success" ng-hide="!addNewPlayer">
-                <div class="input-group">
-                    <input id="name" class="form-control" placeholder="Player name" ng-model="newPlayer.Name" type="text" />
-                    <span class="input-group-btn">
-                        <button type="submit" class="btn btn-submit">Add player</button>
-                    </span>
-                    <span class="input-group-btn">
-                        <a href="#" class="btn btn-link" ng-click="addNewPlayer = false">Cancel</a>
-                    </span>
+            <div class="col-md-5 col-sm-5 player-form">
+                <a href="#" class="add-player" ng-click="addNewPlayer = true" ng-hide="addNewPlayer">Add new player</a>
+                <form class="form-horizontal" name="playerForm" ng-submit="addPlayer()" ng-show="!success" ng-hide="!addNewPlayer">
+                    <div class="input-group">
+                        <input id="name" class="form-control" placeholder="Player name" ng-model="newPlayer.Name" type="text" />
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-submit">Add player</button>
+                        </span>
+                        <span class="input-group-btn">
+                            <a href="#" class="btn btn-link" ng-click="addNewPlayer = false">Cancel</a>
+                        </span>
+                    </div>
+                </form>
+                <div ng-show="success">
+                    <p>
+                        Successfully added {{newPlayer.Name}}! <a href="#" ng-click="resetForm()">Add another player</a>
+                    </p>
                 </div>
-            </form>
-            <div ng-show="success">
-                <p>
-                    Successfully added {{newPlayer.Name}}! <a href="#" ng-click="resetForm()">Add another player</a>
-                </p>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <ul class="col-md-12 col-sm-12" ng-init="getAllPlayers()">
-            <li ng-repeat="player in players">
-                <a href="/statistics/{{player.PlayerId}}">{{player.Name}}</a>
-            </li>
-        </ul>
+        <div class="row">
+            <div class="col-md-2 col-sm-2">
+                <select class="form-control" ng-options="filter as filter.filterText for filter in filters track by filter.filterType" ng-model="selectedFilter"></select>
+            </div>
+        </div>
+        <div class="row col-md-12 col-sm-12 stack-top">
+            <table class="player-table">
+                <tr>
+                    <th><button ng-click="selectedFilter = filters[0]; selectedFilter.reverse = !selectedFilter.reverse">Name</button></th>
+                    <th><button ng-click="selectedFilter = filters[1]; selectedFilter.reverse = !selectedFilter.reverse">Matches</button></th>
+                    <th><button ng-click="selectedFilter = filters[2]; selectedFilter.reverse = !selectedFilter.reverse">Win ratio</button></th>
+                    <th><button ng-click="selectedFilter = filters[3]; selectedFilter.reverse = !selectedFilter.reverse">Loss ratio</button></th>
+                    <th><button ng-click="selectedFilter = filters[4]; selectedFilter.reverse = !selectedFilter.reverse">Goals</button></th>
+                    <th><button ng-click="selectedFilter = filters[5]; selectedFilter.reverse = !selectedFilter.reverse">GPM</button></th>
+                </tr>
+                <tr ng-repeat="player in players | limitTo: 5 | orderBy: selectedFilter.filterType : selectedFilter.reverse">
+                    <td>
+                        <a href="/statistics/{{player.PlayerId}}">{{player.Name}}</a>
+                    </td>
+                    <td>
+                        {{player.totalMatches}}
+                    </td>
+                    <td>
+                        {{player.Wins}} ({{((player.Wins / (player.Wins + player.Losses))*100).toFixed(2)}}%)
+                    </td>
+                    <td>
+                        {{player.Losses}} ({{((player.Losses / (player.Wins + player.Losses))*100).toFixed(2)}}%)
+                    </td>
+                    <td>
+                        {{player.Goals}}
+                    </td>
+                    <td>
+                        {{((player.Goals / (player.Wins + player.Losses))).toFixed(2)}}
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
