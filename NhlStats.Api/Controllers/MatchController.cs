@@ -17,7 +17,7 @@ namespace NhlStats.Api.Controllers
             if (match == null)
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest,
-                    new {Message = "Bad request: Match cannot be null."});
+                    new { Message = "Bad request: Match cannot be null." });
             }
             using (var db = new NhlContext())
             {
@@ -31,13 +31,13 @@ namespace NhlStats.Api.Controllers
                 if (playerOne == null || playerTwo == null)
                 {
                     return Request.CreateResponse(HttpStatusCode.BadRequest,
-                        new {Message = "Bad request: Players cannot be null."});
+                        new { Message = "Bad request: Players cannot be null." });
                 }
 
                 if (playerOne == playerTwo)
                 {
                     return Request.CreateResponse(HttpStatusCode.BadRequest,
-                        new {Message = "Bad request: Players cannot be the same."});
+                        new { Message = "Bad request: Players cannot be the same." });
                 }
 
                 if (match.PlayerOneScore > match.PlayerTwoScore)
@@ -55,8 +55,9 @@ namespace NhlStats.Api.Controllers
                 playerTwo.Goals += match.PlayerTwoScore;
 
                 db.SaveChanges();
-                return Request.CreateResponse(HttpStatusCode.OK, new {Message = "Successfully added match!"});
+                return Request.CreateResponse(HttpStatusCode.OK, new { Message = "Successfully added match!" });
             }
+            return null;
         }
 
 

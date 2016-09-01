@@ -1,5 +1,8 @@
 ﻿nhlControllers.controller('matchController', ['apiClient', '$q', '$scope', '$routeParams', function (apiClient, $q, $scope, $routeParams) {
-    $scope.model = {};
+    $scope.model = {
+        overtime: 0,
+        shootout: 0
+    };
     $scope.success = false;
     $scope.showError = false;
     $scope.playerId = $routeParams.playerId;
@@ -33,7 +36,9 @@
             TeamOne: $scope.model.teamOne.TeamId,
             TeamTwo: $scope.model.teamTwo.TeamId,
             PlayerOneScore: $scope.model.teamOneScore,
-            PlayerTwoScore: $scope.model.teamTwoScore
+            PlayerTwoScore: $scope.model.teamTwoScore,
+            Overtime: $scope.model.overtime,
+            Shootout: $scope.model.shootout 
         };
 
         apiClient.addMatch($scope.match)
