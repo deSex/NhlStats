@@ -23,15 +23,35 @@
             <tr>
                 <th>Player One</th>
                 <th>Team One</th>
-                <th>Result</th>
+                <th>
+                    Overtime &nbsp;
+                    Result &nbsp;
+                    Shootout
+                </th>
                 <th>Team Two</th>
                 <th>Player Two</th>
             </tr>
             <tr ng-repeat="match in matches | limitTo: matchesToShow">
                 <td><a href="/statistics/{{match.Player.PlayerId}}">{{match.Player.Name}}</a></td>
-                <td><img src="{{match.Team.EmblemUrl}}"/>{{match.Team.Name}}</td>
-                <td>{{match.PlayerOneScore}} - {{match.PlayerTwoScore}}</td>
-                <td><img src="{{match.Team1.EmblemUrl}}"/>{{match.Team1.Name}}</td>
+                <td><img src="{{match.Team.EmblemUrl}}" />{{match.Team.Name}}</td>
+                <td>
+                    <span ng-if="match.Overtime" class="glyphicon glyphicon-ok true"></span>
+                    <span ng-if="!match.Overtime" class="glyphicon glyphicon-remove false"></span>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    {{match.PlayerOneScore}} - {{match.PlayerTwoScore}}
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <span ng-if="match.Shootout" class="glyphicon glyphicon-ok true"></span>
+                    <span ng-if="!match.Shootout" class="glyphicon glyphicon-remove false"></span>
+                </td>
+                <td><img src="{{match.Team1.EmblemUrl}}" />{{match.Team1.Name}}</td>
                 <td><a href="/statistics/{{match.Player1.PlayerId}}">{{match.Player1.Name}}</a></td>
             </tr>
             <tr class="no-border" ng-if="matches.length > matchesToShow">

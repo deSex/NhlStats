@@ -103,6 +103,13 @@ h2{
    }
 }
 
+.true{
+    color: #03ff00;
+}
+.false{
+    color: #ff0000;
+}
+
 @media(max-width: 767px) {
     .navbar-brand {
         margin-top: -5px;

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity.Migrations;
+﻿using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -17,10 +16,12 @@ namespace NhlStats.Api.Controllers
         {
             if (match == null)
             {
-                return Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = "Bad request: Match cannot be null." });
+                return Request.CreateResponse(HttpStatusCode.BadRequest,
+                    new {Message = "Bad request: Match cannot be null."});
             }
             using (var db = new NhlContext())
             {
+                match.Date = DateTime.Now;
                 db.Matches.Add(match);
 
 
@@ -29,12 +30,14 @@ namespace NhlStats.Api.Controllers
 
                 if (playerOne == null || playerTwo == null)
                 {
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = "Bad request: Players cannot be null." });
+                    return Request.CreateResponse(HttpStatusCode.BadRequest,
+                        new {Message = "Bad request: Players cannot be null."});
                 }
 
                 if (playerOne == playerTwo)
                 {
-                    return Request.CreateResponse(HttpStatusCode.BadRequest, new { Message = "Bad request: Players cannot be the same." });
+                    return Request.CreateResponse(HttpStatusCode.BadRequest,
+                        new {Message = "Bad request: Players cannot be the same."});
                 }
 
                 if (match.PlayerOneScore > match.PlayerTwoScore)
@@ -52,7 +55,7 @@ namespace NhlStats.Api.Controllers
                 playerTwo.Goals += match.PlayerTwoScore;
 
                 db.SaveChanges();
-                return Request.CreateResponse(HttpStatusCode.OK, new { Message = "Successfully added match!" });
+                return Request.CreateResponse(HttpStatusCode.OK, new {Message = "Successfully added match!"});
             }
         }
 
@@ -64,7 +67,7 @@ namespace NhlStats.Api.Controllers
             using (var db = new NhlContext())
             {
                 var query = (from b in db.Matches
-                             select b).OrderByDescending(x => x.MatchId);
+                    select b).OrderByDescending(x => x.MatchId);
 
                 foreach (var match in query)
                 {
@@ -89,10 +92,11 @@ namespace NhlStats.Api.Controllers
 
                 if (matches.Count == 0)
                 {
-                    return Request.CreateResponse(HttpStatusCode.ExpectationFailed, new { Message = "Expecation failed: There are no saved matches." });
+                    return Request.CreateResponse(HttpStatusCode.ExpectationFailed,
+                        new {Message = "Expecation failed: There are no saved matches."});
                 }
 
-                return Request.CreateResponse(HttpStatusCode.OK, new { content = matches });
+                return Request.CreateResponse(HttpStatusCode.OK, new {content = matches});
             }
         }
 
@@ -100,19 +104,18 @@ namespace NhlStats.Api.Controllers
         [Route("api/matches/getAllByPlayerId/{playerId}")]
         public HttpResponseMessage GetAllByPlayerId(string playerId)
         {
-
             int id;
             if (int.TryParse(playerId, out id))
             {
                 Request.CreateResponse(HttpStatusCode.BadRequest,
-                    new { message = "Bad Request: Could not parse PlayerId." });
+                    new {message = "Bad Request: Could not parse PlayerId."});
             }
 
             using (var db = new NhlContext())
             {
                 var query = (from b in db.Matches
-                             where b.Player.PlayerId == id || b.Player1.PlayerId == id
-                             select b).OrderByDescending(x => x.MatchId);
+                    where b.Player.PlayerId == id || b.Player1.PlayerId == id
+                    select b).OrderByDescending(x => x.MatchId);
 
                 foreach (var match in query)
                 {
@@ -137,10 +140,11 @@ namespace NhlStats.Api.Controllers
 
                 if (matches == null || matches.Count == 0)
                 {
-                    return Request.CreateResponse(HttpStatusCode.ExpectationFailed, new { Message = "Expecation failed: There are no saved matches." });
+                    return Request.CreateResponse(HttpStatusCode.ExpectationFailed,
+                        new {Message = "Expecation failed: There are no saved matches."});
                 }
 
-                return Request.CreateResponse(HttpStatusCode.OK, new { content = matches });
+                return Request.CreateResponse(HttpStatusCode.OK, new {content = matches});
             }
         }
     }

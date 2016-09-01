@@ -6,7 +6,7 @@ namespace NhlStats.Api.Context
     public class NhlContext : DbContext
     {
         public NhlContext()
-            : base("name=NhlContext")
+            : base("name=NhlContextDb")
         {
         }
 
