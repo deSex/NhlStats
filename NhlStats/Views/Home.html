@@ -16,9 +16,9 @@
             <td><a href="/statistics/{{match.Player.PlayerId}}">{{match.Player.Name}}</a></td>
             <td><img src="{{match.Team.EmblemUrl}}" />{{match.Team.Name}}</td>
             <td>
-                <span ng-if="match.Overtime" class="glyphicon glyphicon-ok true"></span>
-                <span ng-if="!match.Overtime" class="glyphicon glyphicon-remove false"></span>
-                &nbsp;
+                <span ng-if="match.Overtime">Yes</span>
+                <span ng-if="!match.Overtime">No&nbsp;</span>
+
                 &nbsp;
                 &nbsp;
                 &nbsp;
@@ -28,9 +28,9 @@
                 &nbsp;
                 &nbsp;
                 &nbsp;
-                &nbsp;
-                <span ng-if="match.Shootout" class="glyphicon glyphicon-ok true"></span>
-                <span ng-if="!match.Shootout" class="glyphicon glyphicon-remove false"></span>
+
+                <span ng-if="match.Shootout">Yes</span>
+                <span ng-if="!match.Shootout">No</span>
             </td>
             <td><img src="{{match.Team1.EmblemUrl}}" />{{match.Team1.Name}}</td>
             <td><a href="/statistics/{{match.Player1.PlayerId}}">{{match.Player1.Name}}</a></td>
@@ -54,9 +54,15 @@
         <div class="row">
             <div class="col-md-3 col-sm-3">
                 <h2>Players</h2>
-                <p>Click a player for more statistics</p><br />
+                <p>Click a player for more statistics</p>
             </div>
 
+            
+        </div>
+        <div class="row">
+            <div class="col-md-2 col-sm-2">
+                <select class="form-control" ng-options="filter as filter.filterText for filter in filters track by filter.filterType" ng-model="selectedFilter"></select>
+            </div>
             <div class="col-md-5 col-sm-5 add-player">
                 <a href="#" ng-click="addNewPlayer = true" ng-hide="addNewPlayer">Add new player</a>
                 <form class="form-horizontal player-form" name="playerForm" ng-submit="addPlayer()" ng-show="!success" ng-hide="!addNewPlayer">
@@ -75,11 +81,6 @@
                         Successfully added {{newPlayer.Name}}! <a href="#" ng-click="resetForm()">Add another player</a>
                     </p>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2 col-sm-2">
-                <select class="form-control" ng-options="filter as filter.filterText for filter in filters track by filter.filterType" ng-model="selectedFilter"></select>
             </div>
         </div>
         <div class="row col-md-12 col-sm-12 stack-top">
