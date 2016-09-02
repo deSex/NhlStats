@@ -44,21 +44,6 @@ namespace NhlStats.Api.Controllers
             using (var db = new NhlContext())
             {
                 var player = db.Players.SingleOrDefault(b => b.PlayerId == id);
-                var matches = (from b in db.Matches
-                               where b.PlayerOne == player.PlayerId || b.PlayerTwo == player.PlayerId
-                               select b).OrderByDescending(x => x.MatchId).ToList();
-
-                foreach (var match in matches)
-                {
-                    match.Player = db.Players.SingleOrDefault(x => x.PlayerId == match.PlayerOne);
-                    match.Player1 = db.Players.SingleOrDefault(x => x.PlayerId == match.PlayerTwo);
-
-                    match.Team = db.Teams.SingleOrDefault(x => x.TeamId == match.TeamOne);
-                    match.Team1 = db.Teams.SingleOrDefault(x => x.TeamId == match.TeamTwo);
-                }
-
-                player.Matches = matches;
-
                 return Request.CreateResponse(HttpStatusCode.OK, new { content = player });
             }
         }

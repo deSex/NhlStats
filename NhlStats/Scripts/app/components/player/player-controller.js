@@ -20,8 +20,7 @@
             .then(function (response) {
                 $scope.player = response.content;
             })
-            .catch(function () {
-
+            .catch(function (error) {
             });
     };
 
