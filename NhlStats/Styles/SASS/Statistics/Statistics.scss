@@ -1,0 +1,32 @@
+﻿.player-stats{
+    height: 300px;
+    h1{
+    font-family: NHL;
+    font-size: 9em;
+    width: 120%;
+    }
+}
+
+@media(max-width:750px){
+    .player-stats{
+        h1{
+            font-size: 8em;
+        }
+    }
+}
+
+@media(max-width:665px){
+    .player-stats{
+        h1{
+            font-size: 6em;
+        }
+    }
+}
+
+@media(max-width:500px){
+    .player-stats{
+        h1{
+            font-size: 4em;
+        }
+    }
+}

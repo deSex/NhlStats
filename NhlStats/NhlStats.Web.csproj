@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NhlStats</RootNamespace>
     <AssemblyName>NhlStats</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
@@ -30,6 +30,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,6 +39,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Gruntfile.js" />
@@ -77,6 +79,170 @@
     <Content Include="node_modules\grunt-contrib-concat\tasks\concat.js" />
     <Content Include="node_modules\grunt-contrib-concat\tasks\lib\comment.js" />
     <Content Include="node_modules\grunt-contrib-concat\tasks\lib\sourcemap.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\ansi-styles\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\escape-string-regexp\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\has-ansi\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\has-ansi\node_modules\ansi-regex\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\strip-ansi\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\strip-ansi\node_modules\ansi-regex\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\supports-color\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\clean.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\colors\hex-name-shortener.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\colors\hsl.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\colors\rgb.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\imports\inliner.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\break-up.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\can-override.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\clone.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\compactable.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\every-combination.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\has-inherit.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\invalid-property-error.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\optimizer.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\override-compactor.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\populate-components.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\remove-unused.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\restore-from-optimizing.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\restore.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\shorthand-compactor.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\validator.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\vendor-prefixes.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\properties\wrap-for-optimizing.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\selectors\advanced.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\selectors\clean-up.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\selectors\extractor.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\selectors\is-special.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\selectors\merge-adjacent.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\selectors\merge-media-queries.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\selectors\merge-non-adjacent-by-body.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\selectors\merge-non-adjacent-by-selector.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\selectors\reduce-non-adjacent.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\selectors\remove-duplicate-media-queries.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\selectors\remove-duplicates.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\selectors\reorderable.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\selectors\restructure.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\selectors\simple.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\source-maps\track.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\stringifier\helpers.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\stringifier\one-time.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\stringifier\simple.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\stringifier\source-maps.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\text\comments-processor.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\text\escape-store.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\text\expressions-processor.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\text\free-text-processor.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\text\urls-processor.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\tokenizer\extract-properties.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\tokenizer\extract-selectors.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\tokenizer\tokenize.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\urls\rebase.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\urls\reduce.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\urls\rewrite.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\utils\clone-array.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\utils\compatibility.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\utils\input-source-map-tracker.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\utils\object.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\utils\quote-scanner.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\utils\source-reader.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\utils\source-tracker.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\lib\utils\split.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\commander\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\commander\node_modules\graceful-readlink\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\build\assert-shim.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\build\mini-require.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\build\suffix-browser.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\build\test-prefix.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\build\test-suffix.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\lib\source-map.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\lib\source-map\array-set.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\lib\source-map\base64-vlq.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\lib\source-map\base64.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\lib\source-map\binary-search.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\lib\source-map\mapping-list.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\lib\source-map\quick-sort.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\lib\source-map\source-map-consumer.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\lib\source-map\source-map-generator.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\lib\source-map\source-node.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\lib\source-map\util.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\node_modules\amdefine\amdefine.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\node_modules\amdefine\intercept.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\figures\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\figures\node_modules\escape-string-regexp\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\figures\node_modules\object-assign\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\cli.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\dist\pako.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\dist\pako.min.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\dist\pako_deflate.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\dist\pako_deflate.min.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\dist\pako_inflate.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\dist\pako_inflate.min.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\lib\deflate.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\lib\inflate.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\lib\utils\common.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\lib\utils\strings.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\lib\zlib\adler32.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\lib\zlib\constants.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\lib\zlib\crc32.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\lib\zlib\deflate.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\lib\zlib\gzheader.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\lib\zlib\inffast.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\lib\zlib\inflate.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\lib\zlib\inftrees.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\lib\zlib\messages.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\lib\zlib\trees.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\lib\zlib\zstream.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\src\binding.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\src\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\test\fixtures\elipses.txt" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\test\fixtures\empty.txt" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\test\fixtures\person.jpg" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\test\ignored\test-zlib-dictionary-fail.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\test\ignored\test-zlib-dictionary.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\test\ignored\test-zlib-params.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\test\test-zlib-close-after-write.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\test\test-zlib-convenience-methods.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\test\test-zlib-from-string.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\test\test-zlib-invalid-input.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\test\test-zlib-random-byte-pipes.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\test\test-zlib-write-after-flush.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\test\test-zlib-zero-byte.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\test\test-zlib.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\inherits\inherits.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\inherits\inherits_browser.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\inherits\test.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\duplex.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\lib\_stream_duplex.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\lib\_stream_passthrough.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\lib\_stream_readable.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\lib\_stream_transform.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\lib\_stream_writable.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\core-util-is\lib\util.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\core-util-is\test.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\isarray\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\isarray\test.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\process-nextick-args\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\process-nextick-args\test.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\string_decoder\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\util-deprecate\browser.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\util-deprecate\node.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\passthrough.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\readable.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\transform.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\writable.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\typedarray\example\tarray.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\typedarray\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\typedarray\test\server\undef_globals.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\typedarray\test\tarray.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\pretty-bytes\cli.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\pretty-bytes\node_modules\get-stdin\index.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\pretty-bytes\pretty-bytes.js" />
+    <Content Include="node_modules\grunt-contrib-cssmin\tasks\cssmin.js" />
     <Content Include="node_modules\grunt-contrib-uglify\tasks\lib\uglify.js" />
     <Content Include="node_modules\grunt-contrib-uglify\tasks\uglify.js" />
     <Content Include="node_modules\grunt-contrib-watch\tasks\lib\livereload.js" />
@@ -212,6 +378,9 @@
     <Content Include="Scripts\app\app-bundle.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\components\match\match-controller.js" />
+    <Content Include="Scripts\app\components\player\player-controller.js" />
+    <Content Include="Scripts\app\components\start\start-controller.js" />
+    <Content Include="Scripts\app\components\team\team-controller.js" />
     <Content Include="Scripts\app\utils\api-client.js" />
     <Content Include="Scripts\app\utils\route-config.js" />
     <Content Include="Scripts\script-bundle.js" />
@@ -253,9 +422,10 @@
     <Content Include="Styles\styles-bundle.min.css" />
     <Content Include="Views\Home.html" />
     <Content Include="Views\Match\Add.html" />
+    <Content Include="Views\Statistics\Player.html" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties\" />
+    <Folder Include="Views\Player\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="node_modules\angular-route\angular-route.min.js.map" />
@@ -442,6 +612,154 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Styles\SASS\Match\match.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\SASS\Statistics\Statistics.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+    <Content Include="Styles\SASS\Player\Player.scss" />
+    <Content Include="node_modules\grunt-contrib-cssmin\CHANGELOG" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\.bin\cleancss" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\.bin\cleancss.cmd" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\license" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\ansi-styles\license" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\ansi-styles\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\ansi-styles\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\escape-string-regexp\license" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\escape-string-regexp\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\escape-string-regexp\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\has-ansi\license" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\has-ansi\node_modules\ansi-regex\license" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\has-ansi\node_modules\ansi-regex\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\has-ansi\node_modules\ansi-regex\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\has-ansi\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\has-ansi\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\strip-ansi\license" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\strip-ansi\node_modules\ansi-regex\license" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\strip-ansi\node_modules\ansi-regex\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\strip-ansi\node_modules\ansi-regex\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\strip-ansi\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\strip-ansi\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\supports-color\license" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\supports-color\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\node_modules\supports-color\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\chalk\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\bin\cleancss" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\History.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\LICENSE" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\commander\History.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\commander\LICENSE" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\commander\node_modules\graceful-readlink\.npmignore" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\commander\node_modules\graceful-readlink\.travis.yml" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\commander\node_modules\graceful-readlink\LICENSE" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\commander\node_modules\graceful-readlink\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\commander\node_modules\graceful-readlink\README.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\commander\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\commander\Readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\build\prefix-source-map.jsm" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\build\prefix-utils.jsm" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\build\suffix-source-map.jsm" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\build\suffix-utils.jsm" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\node_modules\amdefine\LICENSE" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\node_modules\amdefine\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\node_modules\amdefine\README.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\node_modules\source-map\README.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\clean-css\README.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\license" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\.bin\gzip-size" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\.bin\gzip-size.cmd" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\.bin\pretty-bytes" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\.bin\pretty-bytes.cmd" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\figures\license" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\figures\node_modules\escape-string-regexp\license" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\figures\node_modules\escape-string-regexp\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\figures\node_modules\escape-string-regexp\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\figures\node_modules\object-assign\license" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\figures\node_modules\object-assign\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\figures\node_modules\object-assign\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\figures\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\figures\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\.npmignore" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\.travis.yml" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\CHANGELOG.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\LICENSE" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\node_modules\pako\README.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\README.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\browserify-zlib\test\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\LICENSE" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\inherits\LICENSE" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\inherits\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\inherits\README.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\.npmignore" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\.travis.yml" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\.zuul.yml" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\doc\stream.markdown" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\doc\wg-meetings\2015-01-30.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\LICENSE" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\core-util-is\float.patch" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\core-util-is\LICENSE" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\core-util-is\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\core-util-is\README.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\isarray\.npmignore" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\isarray\.travis.yml" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\isarray\component.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\isarray\Makefile" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\isarray\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\isarray\README.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\process-nextick-args\.travis.yml" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\process-nextick-args\license.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\process-nextick-args\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\process-nextick-args\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\string_decoder\.npmignore" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\string_decoder\LICENSE" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\string_decoder\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\string_decoder\README.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\util-deprecate\History.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\util-deprecate\LICENSE" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\util-deprecate\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\node_modules\util-deprecate\README.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\readable-stream\README.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\typedarray\.travis.yml" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\typedarray\LICENSE" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\typedarray\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\node_modules\typedarray\readme.markdown" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\node_modules\concat-stream\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\gzip-size\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\pretty-bytes\license" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\pretty-bytes\node_modules\get-stdin\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\pretty-bytes\node_modules\get-stdin\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\pretty-bytes\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\node_modules\pretty-bytes\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\node_modules\maxmin\readme.md" />
+    <Content Include="node_modules\grunt-contrib-cssmin\package.json" />
+    <Content Include="node_modules\grunt-contrib-cssmin\README.md" />
+    <None Include="Properties\PublishProfiles\esattonhlstats %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\esattonhlstats.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

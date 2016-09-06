@@ -1,9 +1,9 @@
-using System.ComponentModel.DataAnnotations.Schema;
+using System;
+
 namespace NhlStats.Api.Entities
 {
     public class Match
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MatchId { get; set; }
 
         public int PlayerOne { get; set; }
@@ -17,5 +17,21 @@ namespace NhlStats.Api.Entities
         public int TeamTwo { get; set; }
 
         public int PlayerTwoScore { get; set; }
+
+        public DateTime Date { get; set; }
+
+        public int Overtime { get; set; }
+
+        public int Shootout { get; set; }
+
+        public virtual Player Player { get; set; }
+
+        public virtual Player Player1 { get; set; }
+
+        public virtual Team Team { get; set; }
+
+        public virtual Team Team1 { get; set; }
+
+
     }
 }

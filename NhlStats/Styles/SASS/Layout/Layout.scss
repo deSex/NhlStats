@@ -3,6 +3,32 @@
     src: url('/Styles/Fonts/NHL.ttf') format('truetype');
 }
 
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+    height: 100%;
+    margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+    height: 50px; /* .push must be the same height as .footer */
+}
+
+ul{
+    li{
+        list-style-type: none;
+    }
+}
+
+h2{
+    margin: 2em 0 2em 0;
+}
+
 .navbar-inverse {
     .navbar-brand {
         color: #ccc;
@@ -37,7 +63,7 @@
 }
 
 .btn-submit{
-    color: #9d9d9d;
+    color: #ccc;
     background-color: black;
     &:hover{
         color: white;
@@ -56,6 +82,32 @@
 .body-content {
     margin-top: 150px;
     padding-bottom: 50px;
+}
+
+.top-margin{
+    margin-top: 30%;
+}
+.bottom-margin{
+    margin-bottom: 30%;
+}
+
+.stack-top{
+    margin-top: 2%;
+}
+
+.no-border{
+   border: none !important;
+
+   td{
+       border: none !important;
+   }
+}
+
+.true{
+    color: #03ff00;
+}
+.false{
+    color: #ff0000;
 }
 
 @media(max-width: 767px) {

@@ -2,6 +2,30 @@
   font-family: 'NHL';
   src: url("/Styles/Fonts/NHL.ttf") format("truetype"); }
 
+* {
+  margin: 0; }
+
+html, body {
+  height: 100%; }
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  /* This line and the next line are not necessary unless you need IE6 support */
+  height: 100%;
+  margin: 0 auto -50px;
+  /* the bottom margin is the negative value of the footer's height */ }
+
+.footer, .push {
+  height: 50px;
+  /* .push must be the same height as .footer */ }
+
+ul li {
+  list-style-type: none; }
+
+h2 {
+  margin: 2em 0 2em 0; }
+
 .navbar-inverse .navbar-brand {
   color: #ccc;
   font-family: NHL;
@@ -20,7 +44,7 @@
   color: #ff7d00; }
 
 .btn-submit {
-  color: #9d9d9d;
+  color: #ccc;
   background-color: black; }
   .btn-submit:hover {
     color: white;
@@ -36,6 +60,26 @@
   margin-top: 150px;
   padding-bottom: 50px; }
 
+.top-margin {
+  margin-top: 30%; }
+
+.bottom-margin {
+  margin-bottom: 30%; }
+
+.stack-top {
+  margin-top: 2%; }
+
+.no-border {
+  border: none !important; }
+  .no-border td {
+    border: none !important; }
+
+.true {
+  color: #03ff00; }
+
+.false {
+  color: #ff0000; }
+
 @media (max-width: 767px) {
   .navbar-brand {
     margin-top: -5px; }
@@ -46,22 +90,68 @@ form label {
   margin: 5px 0 5px 0; }
 
 form .team-logo {
-  min-height: 100px;
+  height: 100px;
   min-width: 100px;
-  max-height: 200px;
-  max-width: 200px; }
+  max-width: 250px; }
 
 form .spacer {
-  float: left;
-  display: inline-block;
-  margin-top: 150px; }
+  display: inline-block; }
 
 form .teams {
   overflow: hidden;
   margin: 0 auto; }
 
 form .team {
-  display: inline-block;
-  float: left; }
-  form .team:first-of-type {
-    margin-left: 16%; }
+  display: inline-block; }
+
+.match-table th, .match-table td {
+  padding: 1% 0 1% 1%;
+  width: 20em;
+  text-align: center;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.5); }
+
+.match-table td img {
+  max-width: 25px;
+  max-height: 25px; }
+
+.player-stats {
+  height: 300px; }
+  .player-stats h1 {
+    font-family: NHL;
+    font-size: 9em;
+    width: 120%; }
+
+@media (max-width: 750px) {
+  .player-stats h1 {
+    font-size: 8em; } }
+
+@media (max-width: 665px) {
+  .player-stats h1 {
+    font-size: 6em; } }
+
+@media (max-width: 500px) {
+  .player-stats h1 {
+    font-size: 4em; } }
+
+.player-form {
+  margin-top: -2%; }
+
+.add-player {
+  margin-top: 0.79%; }
+  .add-player .input-group a {
+    height: 34px; }
+
+.player-table tr th button {
+  background-color: none;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  margin: 0;
+  padding: 0;
+  text-align: left; }
+
+.player-table tr th, .player-table tr td {
+  padding: 1% 0 1% 1%;
+  width: 20em;
+  text-align: center;
+  border-bottom: 1px solid rgba(224, 224, 224, 0.5); }
