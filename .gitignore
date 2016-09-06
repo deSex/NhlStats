@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/NhlStats.v12.suo
+/NhlStats
+/NhlStats/bin
+/NhlStats/node_modules
+/NhlStats/obj/Debug
+/packages
