@@ -13,7 +13,7 @@
             <th>Player Two</th>
         </tr>
         <tr ng-repeat="match in matches | limitTo: matchesToShow">
-            <td><a href="/statistics/{{match.Player.PlayerId}}">{{match.Player.Name}}</a></td>
+            <td><a href="/NHL16/statistics/{{match.Player.PlayerId}}">{{match.Player.Name}}</a></td>
             <td><img src="{{match.Team.EmblemUrl}}" />{{match.Team.Name}}</td>
             <td>
                 <span ng-if="match.Overtime">Yes</span>
@@ -33,7 +33,7 @@
                 <span ng-if="!match.Shootout">No</span>
             </td>
             <td><img src="{{match.Team1.EmblemUrl}}" />{{match.Team1.Name}}</td>
-            <td><a href="/statistics/{{match.Player1.PlayerId}}">{{match.Player1.Name}}</a></td>
+            <td><a href="/NHL16/statistics/{{match.Player1.PlayerId}}">{{match.Player1.Name}}</a></td>
         </tr>
         <tr class="no-border" ng-if="matches.length > matchesToShow">
             <td></td>
@@ -57,7 +57,7 @@
                 <p>Click a player for more statistics</p>
             </div>
 
-            
+
         </div>
         <div class="row">
             <div class="col-md-2 col-sm-2">
@@ -97,7 +97,7 @@
                 </tr>
                 <tr ng-repeat="player in players | limitTo: 5 | orderBy: selectedFilter.filterType : selectedFilter.reverse">
                     <td>
-                        <a href="/statistics/{{player.PlayerId}}">{{player.Name}}</a>
+                        <a href="/NHL16/statistics/{{player.PlayerId}}">{{player.Name}}</a>
                     </td>
                     <td>
                         {{player.totalMatches}}
@@ -136,6 +136,14 @@
                     <td><a href="#" ng-click="showLessPlayers()">Show less</a></td>
                 </tr>
             </table>
+
+
+            <!--<div ng-init="getTopTeams()">
+                <div ng-repeat="team in topTeams" class="top-team">
+                    <img src="{{team.EmblemUrl}}"/>
+                    <h3>{{team.Name}}</h3>
+                </div>
+            </div>-->
         </div>
     </div>
 </div>

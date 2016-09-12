@@ -1,5 +1,5 @@
 ﻿nhlServices.service('apiClient', ['$http', function ($http) {
-    var baseUrl = 'http://nhlstats.api.local/api';
+    var baseUrl = 'http://gamestats.api.local/api';
 
     // Matches
 
