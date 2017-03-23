@@ -64,6 +64,6 @@ C:\Projects\NhlStats\NhlStats.Api\bin\Newtonsoft.Json.xml
 C:\Projects\NhlStats\NhlStats.Api\bin\System.Net.Http.Formatting.xml
 C:\Projects\NhlStats\NhlStats.Api\bin\System.Web.Http.xml
 C:\Projects\NhlStats\NhlStats.Api\bin\System.Web.Http.WebHost.xml
-C:\Projects\NhlStats\NhlStats.Api\obj\Debug\NhlStats.Api.csprojResolveAssemblyReference.cache
 C:\Projects\NhlStats\NhlStats.Api\obj\Debug\NhlStats.Api.dll
 C:\Projects\NhlStats\NhlStats.Api\obj\Debug\NhlStats.Api.pdb
+C:\Projects\NhlStats\NhlStats.Api\obj\Debug\NhlStats.Api.csprojResolveAssemblyReference.cache

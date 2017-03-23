@@ -80,44 +80,6 @@ h2 {
 .false {
   color: #ff0000; }
 
-.game-selection {
-  height: 140%;
-  width: 100%;
-  z-index: 9999;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-color: black;
-  font-family: NHL;
-  color: white;
-  font-weight: bold;
-  text-transform: uppercase; }
-  .game-selection h1 {
-    font-size: 3em; }
-  .game-selection a {
-    margin-top: 2%; }
-    .game-selection a p {
-      font-size: 4em;
-      color: white;
-      top: 45%;
-      left: 15%;
-      position: absolute;
-      width: 100%;
-      z-index: 10; }
-    .game-selection a .active {
-      opacity: 0.6;
-      width: 100%;
-      height: 100%;
-      margin-top: 25px; }
-      .game-selection a .active:hover {
-        opacity: 1.0; }
-    .game-selection a .inactive {
-      opacity: 0.2;
-      width: 100%;
-      height: 100%;
-      margin-top: 25px;
-      z-index: 5; }
-
 @media (max-width: 767px) {
   .navbar-brand {
     margin-top: -5px; }

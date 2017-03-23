@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Esatto Gamestats</title>
+    <title>NHL Stats</title>
     <base href="/" />
     <link href="Styles/styles-bundle.css" rel="stylesheet"/>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -13,14 +13,10 @@
 <body ng-app="nhlApp">
     <div class="wrapper">
         <div class="navbar navbar-inverse navbar-fixed-top">
-            <ul class="nav navbar-nav navbar-left">
-                <li class="navbar-btn left"><a href="/"><p>Back to game selection</p></a></li>
-            </ul>
             <div class="container">
                 <div class="navbar-header">
-
-                    <a href="/NHL16" class="navbar-brand">
-                        <img src="/Styles/Images/nhl-logo.png"/>
+                    <a href="/" class="navbar-brand">
+                        <img src="/Styles/Images/nhl-logo.png" />
                         <p>STATS</p>
                     </a>
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -32,28 +28,30 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="navbar-btn"><a href="/NHL16/match/add">Add match</a></li>
-
+                        <li class="navbar-btn"><a href="/match/add">Add match</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="container body-content" ng-view="">
-        </div>
+        <div class="container body-content">
+            <div ng-view>
 
+            </div>
+
+
+        </div>
         <div class="push"></div>
     </div>
     <footer class="text-center footer">
         <hr />
         <p>&copy; 2016 - Ludvig Flemmich</p>
     </footer>
-
-<script src="Scripts/script-bundle.js"></script>
-<script src="Scripts/app/app.js"></script>
-<script src="Scripts/app/utils/api-client.js"></script>
-<script src="Scripts/app/utils/route-config.js"></script>
-<script src="Scripts/app/components/match/match-controller.js"></script>
-<script src="Scripts/app/components/player/player-controller.js"></script>
-<script src="Scripts/app/components/start/start-controller.js"></script>
+    <script src="Scripts/script-bundle.js"></script>
+    <script src="Scripts/app/app.js"></script>
+    <script src="Scripts/app/utils/api-client.js"></script>
+    <script src="Scripts/app/utils/route-config.js"></script>
+    <script src="Scripts/app/components/match/match-controller.js"></script>
+    <script src="Scripts/app/components/player/player-controller.js"></script>
+    <script src="Scripts/app/components/start/start-controller.js"></script>
 </body>
 </html>
