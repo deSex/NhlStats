@@ -6,26 +6,29 @@
 * {
     margin: 0;
 }
+
 html, body {
     height: 100%;
 }
+
 .wrapper {
     min-height: 100%;
     height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
     height: 100%;
     margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
 }
+
 .footer, .push {
     height: 50px; /* .push must be the same height as .footer */
 }
 
-ul{
-    li{
+ul {
+    li {
         list-style-type: none;
     }
 }
 
-h2{
+h2 {
     margin: 2em 0 2em 0;
 }
 
@@ -62,10 +65,11 @@ h2{
     }
 }
 
-.btn-submit{
+.btn-submit {
     color: #ccc;
     background-color: black;
-    &:hover{
+
+    &:hover {
         color: white;
         background-color: #ff7d00;
     }
@@ -84,30 +88,83 @@ h2{
     padding-bottom: 50px;
 }
 
-.top-margin{
+.top-margin {
     margin-top: 30%;
 }
-.bottom-margin{
+
+.bottom-margin {
     margin-bottom: 30%;
 }
 
-.stack-top{
+.stack-top {
     margin-top: 2%;
 }
 
-.no-border{
-   border: none !important;
+.no-border {
+    border: none !important;
 
-   td{
-       border: none !important;
-   }
+    td {
+        border: none !important;
+    }
 }
 
-.true{
+.true {
     color: #03ff00;
 }
-.false{
+
+.false {
     color: #ff0000;
+}
+
+.game-selection {
+    height: 140%;
+    width: 100%;
+    z-index: 9999;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: black;
+    font-family: NHL;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    h1 {
+        font-size: 3em;
+    }
+
+    a {
+        margin-top: 2%;
+
+        p{
+            font-size: 4em;
+            color: white;
+            top: 45%;
+            left: 15%;
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .active {
+            opacity: 0.6;
+            width: 100%;
+            height: 100%;
+            margin-top: 25px;
+
+            &:hover {
+                opacity: 1.0;
+            }
+        }
+
+        .inactive {
+            opacity: 0.2;
+            width: 100%;
+            height: 100%;
+            margin-top: 25px;
+            z-index: 5;
+        }
+    }
 }
 
 @media(max-width: 767px) {

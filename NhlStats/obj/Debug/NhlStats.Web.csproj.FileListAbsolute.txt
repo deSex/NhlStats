@@ -1,0 +1,6 @@
+C:\Projects\NhlStats\NhlStats\bin\NhlStats.dll.config
+C:\Projects\NhlStats\NhlStats\bin\NhlStats.dll
+C:\Projects\NhlStats\NhlStats\bin\NhlStats.pdb
+C:\Projects\NhlStats\NhlStats\obj\Debug\NhlStats.Web.csprojResolveAssemblyReference.cache
+C:\Projects\NhlStats\NhlStats\obj\Debug\NhlStats.dll
+C:\Projects\NhlStats\NhlStats\obj\Debug\NhlStats.pdb

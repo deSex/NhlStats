@@ -386,6 +386,9 @@
     <Content Include="Scripts\script-bundle.js" />
     <Content Include="Scripts\script-bundle.min.js" />
     <Content Include="Styles\Images\nhl-logo.png" />
+    <Content Include="Styles\Images\NHL16.jpg" />
+    <Content Include="Styles\Images\NHL17.png" />
+    <Content Include="Styles\Images\RocketLeague.jpg" />
     <Content Include="Styles\Images\Team Logos\ANA.gif" />
     <Content Include="Styles\Images\Team Logos\ARI.gif" />
     <Content Include="Styles\Images\Team Logos\BOS.gif" />
@@ -420,12 +423,13 @@
     <Content Include="Styles\main.min.css" />
     <Content Include="Styles\styles-bundle.css" />
     <Content Include="Styles\styles-bundle.min.css" />
-    <Content Include="Views\Home.html" />
-    <Content Include="Views\Match\Add.html" />
-    <Content Include="Views\Statistics\Player.html" />
+    <Content Include="Views\GameSelect.html" />
+    <Content Include="Views\NHL16\Home.html" />
+    <Content Include="Views\NHL16\Match\Add.html" />
+    <Content Include="Views\NHL16\Statistics\Player.html" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Player\" />
+    <Folder Include="Views\NHL16\Player\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="node_modules\angular-route\angular-route.min.js.map" />
