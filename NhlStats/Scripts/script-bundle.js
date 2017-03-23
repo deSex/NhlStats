@@ -1,4 +1,4 @@
-/*!2016-08-16 */(function(window) {'use strict';
+/*!2017-03-23 */(function(window) {'use strict';
 
 /**
  * @description
@@ -44800,65 +44800,3 @@ if (typeof jQuery === 'undefined') {
   })
 
 }(jQuery);
-
-var nhlApp = angular.module('nhlApp', ['ngRoute', 'nhlControllers', 'nhlServices']);
-
-var nhlControllers = angular.module('nhlControllers', []);
-var nhlServices = angular.module('nhlServices', []);
-nhlControllers.controller('matchController', ['apiClient', '$q', function (apiClient, $q) {
-
-    $scope.init(function() {
-        apiClient.getAllTeams()
-            .then(function(response) {
-                $scope.teams = response[0].content;
-            })
-            .catch(function (error) {
-                return error;
-            });
-    });
-    $scope.getLatestMatches(function () {
-        apiClient.getAllMatches()
-            .then(function (response) {
-                return response;
-            })
-            .catch(function (error) {
-                return error;
-            });
-    });
-
-}]);
-nhlServices.service('apiClient', ['$http', function ($http) {
-    var baseUrl = 'http://nhlstats.api.local/api';
-
-    this.getAllMatches = function () {
-        return $http.get(baseUrl + '/matches/getall')
-			.then(function (response) { return response.data })
-			.catch(function (error) { return error });
-    };
-
-    this.getAllTeams = function () {
-        return $http.get(baseUrl + '/teams/getall')
-			.then(function (response) { return response.data })
-			.catch(function (error) { return error });
-    };
-
-    this.getAllPlayers = function () {
-        return $http.get(baseUrl + '/players/getall')
-			.then(function (response) { return response.data })
-			.catch(function (error) { return error });
-    };
-}]);
-nhlApp.config(['$locationProvider', '$routeProvider',
-    function config($locationProvider, $routeProvider) {
-        $routeProvider.
-            when('/', {
-                templateUrl: 'Views/Home.html'
-            }).
-          when('/add', {
-              templateUrl: 'Views/Match/Add.html'
-          }).
-          otherwise('/');
-
-        $locationProvider.html5Mode(true);
-    }
-]);
